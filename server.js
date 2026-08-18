@@ -33,16 +33,56 @@ app.use(async (req, res, next) => {
   next();
 });
 
-// قراءة وعرض ملف index.html مباشرة
+// المسار الرئيسي لقراءة ملف index.html من أي مسار محتمل في Vercel
 app.get('/', (req, res) => {
-  try {
-    const filePath = path.join(__dirname, 'index.html');
-    const htmlContent = fs.readFileSync(filePath, 'utf8');
-    res.setHeader('Content-Type', 'text/html');
-    res.send(htmlContent);
-  } catch (err) {
-    res.status(500).send('Error loading page: ' + err.message);
+  const possiblePaths = [
+    path.join(__dirname, 'index.html'),
+    path.join(process.cwd(), 'index.html'),
+    path.resolve('index.html')
+  ];
+
+  let htmlContent = null;
+  for (const p of possiblePaths) {
+    if (fs.existsSync(p)) {
+      htmlContent = fs.readFileSync(p, 'utf8');
+      break;
+    }
   }
+
+  if (htmlContent) {
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    return res.send(htmlContent);
+  }
+
+  // في حال تعذر الوصول للملف لأي سبب يتم إرجاع واجهة تسجيل الدخول مباشرة
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="ar" dir="rtl">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>تسجيل الدخول</title>
+      <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #0f172a; color: #fff; margin: 0; }
+        .card { background: #1e293b; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); width: 90%; max-width: 400px; text-align: center; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: #fff; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; border: none; border-radius: 8px; background: #22c55e; color: #000; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #16a34a; }
+      </style>
+    </head>
+    <body>
+      <div class="card">
+        <h2>تسجيل الدخول إلى المحفظة</h2>
+        <form id="loginForm">
+          <input type="text" id="username" placeholder="اسم المستخدم أو الهاتف" required />
+          <input type="password" id="password" placeholder="كلمة المرور" required />
+          <button type="submit">دخول</button>
+        </form>
+      </div>
+    </body>
+    </html>
+  `);
 });
 
 // فحص السيرفر
@@ -50,7 +90,7 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running', dbConnected: Boolean(isConnected) });
 });
 
-// إرسال واتساب
+// إرسال رسائل الواتساب عبر UltraMsg
 app.post('/api/send-whatsapp', async (req, res) => {
   const { phone, message } = req.body;
   try {
