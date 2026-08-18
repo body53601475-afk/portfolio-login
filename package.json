@@ -1,14 +1,16 @@
 {
-  "name": "portfolio-backend",
+  "name": "portfolio-login",
   "version": "1.0.0",
+  "description": "Portfolio Login Application",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "mongoose": "^8.3.1",
-    "cors": "^2.8.5"
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5"
   }
 }
