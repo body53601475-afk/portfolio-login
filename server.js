@@ -7,10 +7,10 @@ require('dotenv').config();
 
 const app = express();
 
-// إعداد قراءة البيانات
+// إعداد قراءة البيانات وJSON
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // المتغيرات البيئية
 const MONGO_URI = process.env.MONGO_URI;
@@ -18,30 +18,31 @@ const JWT_SECRET = process.env.JWT_SECRET || 'default_jwt_secret';
 const ULTRAMSG_INSTANCE_ID = process.env.ULTRAMSG_INSTANCE_ID;
 const ULTRAMSG_TOKEN = process.env.ULTRAMSG_TOKEN;
 
-// الاتصال بـ MongoDB
+// الاتصال بـ MongoDB مع الحفاظ على كفاءة الـ Serverless
 let isConnected = false;
 const connectDB = async () => {
   if (isConnected) return;
   try {
     const db = await mongoose.connect(MONGO_URI);
     isConnected = db.connections[0].readyState;
-    console.log('Connected to MongoDB');
+    console.log('Connected to MongoDB successfully');
   } catch (error) {
-    console.error('MongoDB error:', error);
+    console.error('MongoDB connection error:', error);
   }
 };
 
+// التأكد من الاتصال بقاعدة البيانات مع كل طلب
 app.use(async (req, res, next) => {
   await connectDB();
   next();
 });
 
-// المسار الرئيسي لعرض صفحة index.html
-app.get('/', (req, res) => {
-  res.sendFile(path.join(process.cwd(), 'index.html'));
+// مسار فحص حالة السيرفر
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'Server is running perfectly!', dbConnected: Boolean(isConnected) });
 });
 
-// مسار إرسال واتساب عبر UltraMsg
+// مسار إرسال رسائل الواتساب عبر UltraMsg
 app.post('/api/send-whatsapp', async (req, res) => {
   const { phone, message } = req.body;
   try {
@@ -59,6 +60,7 @@ app.post('/api/send-whatsapp', async (req, res) => {
   }
 });
 
+// تشغيل السيرفر محلياً
 const PORT = process.env.PORT || 5000;
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {
@@ -66,4 +68,5 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
+// تصدير التطبيق لـ Vercel
 module.exports = app;
