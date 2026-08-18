@@ -1,5 +1,2 @@
-PORT=5000
-MONGO_URI=mongodb+srv://b53601475_db_user:press12345@cluster0.ymtr9ba.mongodb.net/myDatabase?retryWrites=true&w=majority&appName=Cluster0
-JWT_SECRET=mysecretkey12345
-ULTRAMSG_INSTANCE_ID=instance188836
-ULTRAMSG_TOKEN=Oea94b85o6f4fl2v
+.env
+node_modules
