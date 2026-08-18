@@ -1,4 +1,4 @@
-    const express = require('express');
+const express = require('express');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const axios = require('axios');
@@ -7,10 +7,10 @@ require('dotenv').config();
 
 const app = express();
 
-// إعداد قراءة البيانات و الملفات الثابتة
+// إعداد قراءة البيانات
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 
 // المتغيرات البيئية
 const MONGO_URI = process.env.MONGO_URI;
@@ -18,34 +18,30 @@ const JWT_SECRET = process.env.JWT_SECRET || 'default_jwt_secret';
 const ULTRAMSG_INSTANCE_ID = process.env.ULTRAMSG_INSTANCE_ID;
 const ULTRAMSG_TOKEN = process.env.ULTRAMSG_TOKEN;
 
-// الاتصال بـ MongoDB مع معالجة الأخطاء
+// الاتصال بـ MongoDB
 let isConnected = false;
 const connectDB = async () => {
   if (isConnected) return;
   try {
-    const db = await mongoose.connect(MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const db = await mongoose.connect(MONGO_URI);
     isConnected = db.connections[0].readyState;
-    console.log('Connected to MongoDB successfully');
+    console.log('Connected to MongoDB');
   } catch (error) {
-    console.error('MongoDB connection error:', error);
+    console.error('MongoDB error:', error);
   }
 };
 
-// Middleware للتأكد من الاتصال بقاعدة البيانات قبل تنفيذ أي طلب
 app.use(async (req, res, next) => {
   await connectDB();
   next();
 });
 
-// مسار الصفحة الرئيسية
+// المسار الرئيسي لعرض صفحة index.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(process.cwd(), 'index.html'));
 });
 
-// نموذج إرسال رسالة واتساب عبر UltraMsg
+// مسار إرسال واتساب عبر UltraMsg
 app.post('/api/send-whatsapp', async (req, res) => {
   const { phone, message } = req.body;
   try {
@@ -63,7 +59,6 @@ app.post('/api/send-whatsapp', async (req, res) => {
   }
 });
 
-// تشغيل السيرفر في وضع التطوير المحلي
 const PORT = process.env.PORT || 5000;
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {
@@ -71,5 +66,4 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
-// السطر الأهم لمنصة Vercel
 module.exports = app;
