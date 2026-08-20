@@ -1,1732 +1,2342 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#080d1a">
-<title>Abdulrahman Dahshan | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Portfolio شخصي واحترافي لـ عبدالرحمن دهشان (Abdulrahman Dahshan) - مطور ويب متكامل ومصمم واجهات وتجارب مستخدم Full Stack & UI/UX Designer.">
+    <meta name="keywords" content="Abdulrahman Dahshan, عبدالرحمن دهشان, Full Stack Developer, Frontend Developer, UI/UX Designer, مطور ويب, محفظة أعمال, برمجة">
+    <meta name="author" content="Abdulrahman Dahshan">
+    <meta name="theme-color" content="#06b6d4">
 
-<!-- Fonts & Icons -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Open Graph / Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Abdulrahman Dahshan | Portfolio">
+    <meta property="og:description" content="Portfolio شخصي واحترافي للمطور ومصمم الواجهات عبدالرحمن دهشان.">
+    <meta property="og:locale" content="ar_AR">
 
-<style>
-/* =========================================================
-   1. الإعدادات العامة والمتغيرات اللمسية
-   ========================================================= */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-}
+    <!-- Favicon (SVG Embedded Data URI) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%2306b6d4'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' fill='%23ffffff' font-family='sans-serif' font-size='42' font-weight='900'>AD</text></svg>">
 
-:root {
-  --c1: #4eedc2;
-  --c2: #38bdf8;
-  --grad-main: linear-gradient(135deg, #4eedc2 0%, #38bdf8 100%);
-  --grad-glow: rgba(78, 237, 194, 0.35);
-  --bg-dark: #080d1a;
-  --card-bg: rgba(13, 22, 38, 0.92);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --text-main: #f8fafc;
-  --text-dim: #94a3b8;
-  
-  --slow-motion-ease: cubic-bezier(0.25, 1, 0.3, 1);
-}
+    <title>Abdulrahman Dahshan | Portfolio</title>
 
-body.theme-purple {
-  --c1: #a78bfa;
-  --c2: #f472b6;
-  --grad-main: linear-gradient(135deg, #a78bfa 0%, #f472b6 100%);
-  --grad-glow: rgba(167, 139, 250, 0.35);
-  --bg-dark: #0f0c1b;
-  --card-bg: rgba(23, 18, 41, 0.92);
-}
+    <!-- Google Fonts & Font Awesome 6.4.0 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-body.theme-sunset {
-  --c1: #fb923c;
-  --c2: #f43f5e;
-  --grad-main: linear-gradient(135deg, #fb923c 0%, #f43f5e 100%);
-  --grad-glow: rgba(251, 146, 60, 0.35);
-  --bg-dark: #140d12;
-  --card-bg: rgba(31, 18, 25, 0.92);
-}
+    <style>
+        /* ==========================================================================
+           1. نظام المتغيرات والتصميم الجذري (CSS Variables & Global Reset)
+           ========================================================================== */
+        :root {
+            --primary: #06b6d4;
+            --secondary: #0891b2;
+            --accent: #22d3ee;
+            --dark: #020617;
+            --dark-elevated: rgba(15, 23, 42, 0.75);
+            --card-bg: rgba(15, 23, 42, 0.65);
+            --text: #f8fafc;
+            --muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(6, 182, 212, 0.4);
+            --gradient: linear-gradient(135deg, #06b6d4, #0891b2);
+            --gradient-glow: rgba(6, 182, 212, 0.25);
+            --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 10px;
+            --header-height: 78px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-body.theme-ocean {
-  --c1: #38bdf8;
-  --c2: #818cf8;
-  --grad-main: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-  --grad-glow: rgba(56, 189, 248, 0.35);
-  --bg-dark: #090f1d;
-  --card-bg: rgba(15, 24, 46, 0.92);
-}
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 105px;
+        }
 
-body {
-  width: 100%;
-  min-height: 100vh;
-  min-height: 100dvh;
-  font-family: 'Cairo', sans-serif;
-  color: var(--text-main);
-  background: var(--bg-dark);
-  position: relative;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
+        body {
+            font-family: "Cairo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+            min-height: 100vh;
+            line-height: 1.65;
+            transition: background-color 0.4s ease, color 0.3s ease;
+        }
 
-/* مغير الألوان */
-.theme-picker-group {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  background: rgba(15, 23, 42, 0.85);
-  padding: 6px 12px;
-  border-radius: 50px;
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-.theme-dot {
-  width: 19px;
-  height: 19px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: transform 0.3s var(--slow-motion-ease), box-shadow 0.3s ease;
-}
-.theme-dot:hover, .theme-dot.active {
-  transform: scale(1.3);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
-}
-.theme-dot.emerald { background: linear-gradient(135deg, #4eedc2, #38bdf8); }
-.theme-dot.purple { background: linear-gradient(135deg, #a78bfa, #f472b6); }
-.theme-dot.sunset { background: linear-gradient(135deg, #fb923c, #f43f5e); }
-.theme-dot.ocean { background: linear-gradient(135deg, #38bdf8, #818cf8); }
+        body.locked {
+            overflow: hidden;
+            height: 100vh;
+        }
 
-.login-theme-floater {
-  position: fixed;
-  top: 1.25rem;
-  left: 1.25rem;
-  z-index: 1000;
-}
+        a {
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+        }
 
-/* Toast */
-.toast-box {
-  position: fixed;
-  top: 25px;
-  left: 50%;
-  transform: translateX(-50%) translateY(-100px);
-  background: var(--card-bg);
-  border: 1px solid var(--c1);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--grad-glow);
-  padding: 0.85rem 1.6rem;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: #fff;
-  z-index: 99999;
-  opacity: 0;
-  transition: all 0.5s var(--slow-motion-ease);
-  pointer-events: none;
-  direction: rtl;
-}
-.toast-box.show {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-.toast-box i { font-size: 1.25rem; color: var(--c1); }
+        button, input, textarea {
+            font-family: inherit;
+            border: 0;
+            outline: none;
+            background: none;
+        }
 
-/* =========================================================
-   2. شاشة تسجيل الدخول والانكماش الدائري المركزي
-   ========================================================= */
-#authSection {
-  min-height: 100vh;
-  min-height: 100dvh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  background: radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.3) 0%, var(--bg-dark) 100%);
-  overflow: hidden;
-  padding: 1.5rem;
-  direction: ltr;
-  font-family: 'Poppins', 'Cairo', sans-serif;
-}
+        button { cursor: pointer; }
 
-.grid-bg {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 34px 34px;
-  pointer-events: none;
-}
+        ::selection {
+            background: var(--primary);
+            color: #ffffff;
+        }
 
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  pointer-events: none;
-  opacity: 0.28;
-}
-.blob-1 { width: 420px; height: 420px; background: var(--c1); top: -120px; left: -120px; }
-.blob-2 { width: 380px; height: 380px; background: var(--c2); bottom: -100px; right: -100px; }
+        /* شريط التمرير */
+        ::-webkit-scrollbar { width: 9px; }
+        ::-webkit-scrollbar-track { background: var(--dark); }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient);
+            border-radius: 50px;
+            border: 2px solid var(--dark);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
 
-/* بطاقة تسجيل الدخول */
-.card {
-  display: flex;
-  width: 860px;
-  height: 480px;
-  max-width: 100%;
-  background: var(--card-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 28px;
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 30px var(--grad-glow);
-  position: relative;
-  z-index: 10;
-  overflow: hidden;
-  margin: auto;
-  will-change: width, height, border-radius, transform, box-shadow;
-  transition: 
-    width 0.95s var(--slow-motion-ease),
-    height 0.95s var(--slow-motion-ease),
-    border-radius 0.95s var(--slow-motion-ease),
-    border-color 0.95s var(--slow-motion-ease),
-    box-shadow 0.95s var(--slow-motion-ease),
-    background 0.95s var(--slow-motion-ease);
-}
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
 
-/* وضع الانكماش: دائرة متناسقة تبرز الروبوت والحبل */
-#authSection.light-off .card {
-  width: 220px !important;
-  height: 220px !important;
-  border-radius: 50% !important;
-  border: 2.5px solid var(--c1);
-  box-shadow: 0 0 45px var(--grad-glow), 0 15px 50px rgba(0, 0, 0, 0.85);
-  cursor: pointer;
-}
+        /* ==========================================================================
+           2. الخلفية الحية التفاعلية
+           ========================================================================== */
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+            background: var(--dark);
+            pointer-events: none;
+        }
 
-#authSection.light-off .right-panel {
-  opacity: 0 !important;
-  transform: translateX(30px) scale(0.9);
-  pointer-events: none !important;
-  display: none !important;
-}
+        .grid-background {
+            position: absolute;
+            inset: -100%;
+            opacity: 0.12;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 65px 65px;
+            animation: gridMove 30s linear infinite;
+        }
 
-#authSection.light-off .light-beam-cone,
-#authSection.light-off .floor-glow {
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.22;
+            background: var(--primary);
+            will-change: transform;
+            transition: background 0.4s ease;
+        }
 
-#authSection.light-off .stage-panel {
-  border-right: none;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100% !important;
-  height: 100% !important;
-  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06) 0%, rgba(10, 16, 30, 0.98) 100%);
-}
+        .orb-1 { width: 340px; height: 340px; top: -80px; right: 8%; animation: orbOne 18s ease-in-out infinite; }
+        .orb-2 { width: 300px; height: 300px; bottom: 5%; left: 8%; animation: orbTwo 22s ease-in-out infinite; }
+        .orb-3 { width: 230px; height: 230px; top: 45%; left: 35%; opacity: 0.14; animation: orbThree 20s ease-in-out infinite; }
 
-#authSection.light-off .robot-wrapper {
-  margin-bottom: 0 !important;
-  transform: translateY(-8px) scale(0.92);
-}
+        #particleCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
 
-#authSection.light-off .pull-cord-wrapper {
-  top: 15px !important;
-  left: calc(50% + 55px) !important;
-}
+        /* ==========================================================================
+           3. شاشة تسجيل الدخول التجريبية
+           ========================================================================== */
+        #loginScreen {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: radial-gradient(circle at 50% 30%, var(--gradient-glow), transparent 60%), #020617;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
 
-.stage-panel {
-  flex: 1;
-  height: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.04) 0%, rgba(10, 16, 30, 0.95) 100%);
-  border-right: 1px solid var(--glass-border);
-  overflow: hidden;
-  user-select: none;
-  transition: background 0.95s var(--slow-motion-ease);
-}
+        .login-card {
+            width: min(100%, 470px);
+            position: relative;
+            padding: 38px 30px;
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            box-shadow: var(--shadow), 0 0 70px var(--gradient-glow);
+            animation: loginAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
 
-.lamp-assembly {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 8;
-  pointer-events: none;
-}
-.lamp-wire { width: 2px; height: 42px; background: rgba(255,255,255,0.25); }
-.lamp-shade {
-  width: 86px;
-  height: 38px;
-  background: linear-gradient(180deg, #1e293b, #0f172a);
-  border: 1px solid rgba(255,255,255,0.15);
-  clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-.lamp-bulb {
-  width: 32px;
-  height: 10px;
-  background: #ffffff;
-  border-radius: 50%;
-  box-shadow: 0 0 16px #ffffff, 0 0 25px var(--c1);
-  margin-bottom: -4px;
-}
+        .login-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 28px 28px 0 0;
+        }
 
-.light-beam-cone {
-  position: absolute;
-  top: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 250px;
-  height: 300px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, var(--grad-glow) 40%, transparent 100%);
-  clip-path: polygon(28% 0%, 72% 0%, 100% 100%, 0% 100%);
-  pointer-events: none;
-  z-index: 3;
-}
+        .login-logo {
+            width: 78px;
+            height: 78px;
+            margin: 0 auto 16px;
+            display: grid;
+            place-items: center;
+            border-radius: 22px;
+            background: var(--gradient);
+            color: #ffffff;
+            font-size: 1.9rem;
+            box-shadow: 0 10px 30px var(--gradient-glow);
+            animation: floatLogo 4s ease-in-out infinite;
+        }
 
-.pull-cord-wrapper {
-  position: absolute;
-  top: 75px;
-  left: calc(50% + 46px);
-  width: 44px;
-  height: 110px;
-  cursor: pointer;
-  z-index: 30;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: top 0.95s var(--slow-motion-ease), left 0.95s var(--slow-motion-ease);
-}
-.pull-cord-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  transform-origin: top center;
-}
-.pull-cord-wrapper.pulling .pull-cord-inner {
-  animation: springPull 0.55s var(--slow-motion-ease);
-}
-@keyframes springPull {
-  0% { transform: translateY(0); }
-  45% { transform: translateY(32px); }
-  100% { transform: translateY(0); }
-}
-.cord-line { width: 2px; height: 60px; background: rgba(255,255,255,0.4); }
-.cord-handle {
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 0 10px rgba(255,255,255,0.6);
-  margin-top: -1px;
-}
+        .login-title {
+            text-align: center;
+            font-size: 1.75rem;
+            font-weight: 900;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
 
-.floor-glow {
-  position: absolute;
-  bottom: 0;
-  width: 210px;
-  height: 40px;
-  background: radial-gradient(ellipse at center, var(--grad-glow) 0%, transparent 72%);
-  pointer-events: none;
-  z-index: 2;
-}
+        .login-subtitle {
+            color: var(--muted);
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 0.88rem;
+        }
 
-#particles {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 4;
-  pointer-events: none;
-}
+        .login-tabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            padding: 5px;
+            margin-bottom: 22px;
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+        }
 
-/* الروبوت السلس */
-.robot-wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 30px;
-  z-index: 5;
-  will-change: transform;
-  transition: transform 0.95s var(--slow-motion-ease), margin-bottom 0.95s var(--slow-motion-ease);
-}
-.robot-antenna {
-  width: 3px;
-  height: 20px;
-  background: linear-gradient(to top, #94a3b8, #cbd5e1);
-  border-radius: 2px;
-  position: relative;
-  margin-bottom: -2px;
-  display: flex;
-  justify-content: center;
-}
-.robot-antenna::before {
-  content: "";
-  position: absolute;
-  top: -9px;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--c1);
-  box-shadow: 0 0 12px var(--c1);
-}
+        .login-tab {
+            padding: 11px;
+            border-radius: var(--radius-sm);
+            color: var(--muted);
+            background: transparent;
+            transition: var(--transition);
+            font-weight: 700;
+            font-size: 0.86rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
 
-.robot-head {
-  width: 124px;
-  height: 104px;
-  border-radius: 46px 46px 40px 40px;
-  background: linear-gradient(165deg, #ffffff 0%, #f1f5f9 45%, #cbd5e1 100%);
-  box-shadow: 
-    0 18px 30px rgba(0, 0, 0, 0.35),
-    inset 0 4px 6px rgba(255, 255, 255, 0.9),
-    inset 0 -5px 10px rgba(148, 163, 184, 0.4);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+        .login-tab.active {
+            color: #ffffff;
+            background: var(--gradient);
+            box-shadow: 0 4px 20px var(--gradient-glow);
+        }
 
-.robot-ear-left, .robot-ear-right {
-  position: absolute;
-  top: 50%;
-  width: 12px;
-  height: 34px;
-  background: linear-gradient(135deg, #e2e8f0, #94a3b8);
-  border-radius: 8px;
-  transform: translateY(-50%);
-}
-.robot-ear-left { left: -9px; }
-.robot-ear-right { right: -9px; }
+        .login-form { display: none; }
+        .login-form.active {
+            display: block;
+            animation: formFade 0.4s ease forwards;
+        }
 
-.robot-face {
-  width: 98px;
-  height: 76px;
-  border-radius: 32px;
-  background: #0f172a;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(255,255,255,0.4);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+        .field {
+            position: relative;
+            margin-bottom: 16px;
+        }
 
-.robot-eye {
-  width: 26px;
-  height: 26px;
-  background: #ffffff;
-  border-radius: 50%;
-  position: absolute;
-  top: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-  overflow: hidden;
-}
-.robot-eye.left { left: 15px; }
-.robot-eye.right { right: 15px; }
+        .field label {
+            display: block;
+            margin-bottom: 7px;
+            color: #e2e8f0;
+            font-size: 0.84rem;
+            font-weight: 700;
+        }
 
-.pupil {
-  width: 12px;
-  height: 12px;
-  background: #0f172a;
-  border-radius: 50%;
-  position: relative;
-  will-change: transform;
-}
-.pupil::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  width: 4.5px;
-  height: 4.5px;
-  background: #ffffff;
-  border-radius: 50%;
-}
+        .input-wrap { position: relative; }
+        .input-wrap > i {
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            transform: translateY(-50%);
+            color: var(--primary);
+            pointer-events: none;
+            transition: var(--transition);
+        }
 
-.robot-blush-left, .robot-blush-right {
-  position: absolute;
-  bottom: 20px;
-  width: 11px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(244, 114, 182, 0.45);
-}
-.robot-blush-left { left: 14px; }
-.robot-blush-right { right: 14px; }
+        .field input, .field textarea {
+            width: 100%;
+            height: 50px;
+            padding: 0 46px 0 16px;
+            color: #ffffff;
+            background: rgba(2, 6, 23, 0.65);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
 
-.robot-smile {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 8px;
-  border-bottom: 2.5px solid #ffffff;
-  border-radius: 0 0 12px 12px;
-}
+        .field input:focus, .field textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px var(--gradient-glow);
+            background: rgba(2, 6, 23, 0.85);
+        }
 
-.robot-head.eyes-closed .pupil { transform: scaleY(0.1) !important; }
-.robot-head.eyes-closed .robot-smile {
-  width: 12px; height: 2.5px; border-radius: 2px; background: #ffffff; border-bottom: none;
-}
+        .field input::placeholder, .field textarea::placeholder { color: #64748b; }
 
-.right-panel {
-  flex: 1.2;
-  padding: 2.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 5;
-  will-change: opacity, transform;
-  transition: opacity 0.6s var(--slow-motion-ease), transform 0.6s var(--slow-motion-ease);
-}
+        .error-message {
+            display: none;
+            margin-top: 6px;
+            color: #fb7185;
+            font-size: 0.76rem;
+            font-weight: 600;
+        }
 
-.auth-header { margin-bottom: 1.1rem; }
-.auth-header h2 {
-  font-size: 1.65rem;
-  font-weight: 800;
-  background: var(--grad-main);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.auth-header p { font-size: 0.82rem; color: var(--text-dim); margin-top: 0.2rem; }
+        .error-message.show {
+            display: block;
+            animation: shake 0.35s ease;
+        }
 
-.login-tabs {
-  display: flex;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid var(--glass-border);
-  border-radius: 14px;
-  padding: 4px;
-  margin-bottom: 1.25rem;
-  gap: 4px;
-}
-.tab-btn {
-  flex: 1;
-  padding: 0.6rem;
-  background: transparent;
-  border: none;
-  border-radius: 10px;
-  color: var(--text-dim);
-  font-size: 0.85rem;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  transition: var(--transition);
-}
-.tab-btn.active {
-  background: var(--grad-main);
-  color: #0f172a;
-  box-shadow: 0 4px 15px var(--grad-glow);
-}
+        .otp-box { display: none; }
+        .otp-box.show {
+            display: block;
+            animation: formFade 0.4s ease forwards;
+        }
 
-.form-group { margin-bottom: 0.9rem; }
-.form-group label {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  color: var(--text-dim);
-  margin-bottom: 0.35rem;
-}
+        .otp-input {
+            direction: ltr;
+            text-align: center;
+            letter-spacing: 9px;
+            font-size: 1.25rem !important;
+            font-weight: 800;
+        }
 
-.input-box { position: relative; display: flex; align-items: center; }
-.input-box input {
-  width: 100%;
-  padding: 0.8rem 1rem 0.8rem 2.6rem;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid var(--glass-border);
-  border-radius: 14px;
-  color: #fff;
-  font-family: inherit;
-  font-size: 0.9rem;
-  outline: none;
-  transition: var(--transition);
-}
-.input-box input:focus {
-  border-color: var(--c1);
-  box-shadow: 0 0 12px var(--grad-glow);
-}
-.input-box input.invalid {
-  border-color: #f43f5e;
-  box-shadow: 0 0 12px rgba(244, 63, 94, 0.3);
-}
-.input-box i.input-icon {
-  position: absolute;
-  left: 0.95rem;
-  color: var(--c1);
-  font-size: 1rem;
-  pointer-events: none;
-}
-.input-box i.toggle-password {
-  position: absolute;
-  right: 0.95rem;
-  color: var(--text-dim);
-  cursor: pointer;
-}
+        .login-btn {
+            width: 100%;
+            height: 52px;
+            margin-top: 8px;
+            border-radius: var(--radius-md);
+            color: #ffffff;
+            background: var(--gradient);
+            font-weight: 800;
+            font-size: 0.96rem;
+            box-shadow: 0 10px 25px var(--gradient-glow);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
 
-.error-text {
-  display: none;
-  color: #f43f5e;
-  font-size: 0.75rem;
-  margin-top: 0.3rem;
-}
-.error-text.show { display: block; }
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px var(--gradient-glow);
+        }
 
-.signin-btn {
-  width: 100%;
-  padding: 0.85rem;
-  border-radius: 50px;
-  background: var(--grad-main);
-  color: #0f172a;
-  font-weight: 800;
-  font-size: 0.95rem;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  box-shadow: 0 6px 20px var(--grad-glow);
-  transition: transform 0.3s var(--slow-motion-ease), box-shadow 0.3s var(--slow-motion-ease);
-  margin-top: 0.4rem;
-}
-.signin-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px var(--grad-glow);
-}
+        .login-note {
+            margin-top: 18px;
+            color: #64748b;
+            font-size: 0.74rem;
+            text-align: center;
+            line-height: 1.5;
+        }
 
-.form-view { display: none; }
-.form-view.active { display: block; }
+        /* ==========================================================================
+           4. الهيدر والتنقل
+           ========================================================================== */
+        #mainContent {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
 
-/* Modal استعادة كلمة المرور */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(10, 15, 29, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  padding: 1rem;
-  direction: rtl;
-}
-.modal-overlay.open { display: flex; }
-.modal-box {
-  width: 100%;
-  max-width: 410px;
-  background: var(--card-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 22px;
-  padding: 2.2rem;
-  text-align: center;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-}
-.modal-box h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 0.5rem; }
-.modal-box h3 span { color: var(--c1); }
-.modal-box p { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1.25rem; }
-.modal-actions { display: flex; gap: 0.75rem; margin-top: 0.5rem; }
-.modal-actions button { flex: 1; }
-.btn-secondary {
-  background: transparent;
-  border: 1px solid var(--glass-border);
-  color: #fff;
-  box-shadow: none;
-}
-.modal-success { display: none; }
-.modal-success.show { display: block; }
-.modal-success i { font-size: 2.6rem; color: var(--c1); margin-bottom: 1rem; display: block; }
+        #mainContent.visible {
+            display: block;
+            opacity: 1;
+        }
 
-/* =========================================================
-   3. الموقع الرئيسي
-   ========================================================= */
-#mainWebsite { display: none; width: 100%; }
+        .site-header {
+            position: fixed;
+            top: 15px;
+            right: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 0 4%;
+            transition: transform 0.3s ease;
+        }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: var(--card-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--glass-border);
-  padding: 0.85rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+        .header-inner {
+            height: var(--header-height);
+            max-width: 1240px;
+            margin: auto;
+            padding: 0 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            background: rgba(2, 6, 23, 0.72);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
 
-.logo {
-  font-weight: 900;
-  font-size: 1.25rem;
-  background: var(--grad-main);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-decoration: none;
-}
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 900;
+            font-size: 1.15rem;
+        }
 
-#mainNav { display: block; }
-#mainNav ul {
-  display: flex;
-  gap: 1.8rem;
-  list-style: none;
-  align-items: center;
-}
-#mainNav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-  position: relative;
-}
-#mainNav a:hover, #mainNav a.active { color: var(--c1); }
-#mainNav a::after {
-  content: "";
-  position: absolute;
-  right: 0; bottom: -4px;
-  width: 0; height: 2px;
-  background: var(--grad-main);
-  transition: width .35s var(--slow-motion-ease);
-}
-#mainNav a.active::after { width: 100%; }
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            background: var(--gradient);
+            color: #ffffff;
+            font-size: 1rem;
+            box-shadow: 0 0 20px var(--gradient-glow);
+        }
 
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
 
-.logout-icon-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: rgba(244, 63, 94, 0.12);
-  border: 1px solid rgba(244, 63, 94, 0.35);
-  color: #fb7185;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.3s var(--slow-motion-ease), background 0.3s ease;
-}
-.logout-icon-btn:hover {
-  background: rgba(244, 63, 94, 0.3);
-  color: #fff;
-  border-color: #f43f5e;
-  transform: scale(1.1);
-}
+        .desktop-nav a {
+            padding: 9px 15px;
+            color: #cbd5e1;
+            font-size: 0.88rem;
+            font-weight: 700;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            position: relative;
+        }
 
-.nav-toggle {
-  display: none;
-  background: transparent;
-  border: 1px solid var(--glass-border);
-  color: #fff;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
+        .desktop-nav a:hover, .desktop-nav a.active {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+        }
 
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 6rem 1.5rem 2rem;
-}
-.hero h1 {
-  font-size: clamp(2.5rem, 5.5vw, 4.6rem);
-  font-weight: 900;
-  margin-bottom: 1rem;
-  background: var(--grad-main);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hero p {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: var(--text-dim);
-  max-width: 620px;
-  margin-bottom: 2.2rem;
-  min-height: 2em;
-}
+        .desktop-nav a.active::after {
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            right: 15px;
+            left: 15px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 50px;
+        }
 
-.btn {
-  display: inline-block;
-  padding: 0.85rem 2.2rem;
-  border-radius: 50px;
-  background: var(--grad-main);
-  color: #0f172a;
-  font-weight: 800;
-  text-decoration: none;
-  transition: transform 0.3s var(--slow-motion-ease), box-shadow 0.3s var(--slow-motion-ease);
-  box-shadow: 0 6px 20px var(--grad-glow);
-}
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px var(--grad-glow);
-}
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-section {
-  padding: 5.5rem 1.5rem 4.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.section-title {
-  font-size: 2.1rem;
-  font-weight: 900;
-  margin-bottom: 2.2rem;
-  text-align: center;
-  background: var(--grad-main);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-.card-item {
-  background: var(--card-bg);
-  border: 1px solid var(--glass-border);
-  padding: 2.2rem;
-  border-radius: 1.4rem;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: transform 0.4s var(--slow-motion-ease), border-color 0.4s ease;
-}
-.card-item:hover {
-  border-color: var(--c1);
-  transform: translateY(-6px);
-}
-.card-item h3 {
-  margin-bottom: 1rem;
-  color: var(--c1);
-  font-size: 1.35rem;
-}
-.card-item p {
-  color: var(--text-dim);
-  line-height: 1.65;
-}
+        .logout-btn-header {
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: rgba(239, 68, 68, 0.12);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.28);
+            font-weight: 700;
+            font-size: 0.84rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-footer {
-  text-align: center;
-  padding: 2.5rem 1.5rem;
-  border-top: 1px solid var(--glass-border);
-  background: var(--card-bg);
-  margin-top: 4rem;
-}
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1.2rem;
-  flex-wrap: wrap;
-}
-.socials a {
-  color: #fff;
-  font-size: 1.6rem;
-  transition: color 0.3s ease, transform 0.3s var(--slow-motion-ease);
-}
-.socials a:hover { color: var(--c1); transform: translateY(-3px); }
+        .logout-btn-header:hover {
+            background: #ef4444;
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+            transform: translateY(-2px);
+        }
 
-.cursor-glow {
-  position: fixed;
-  top: 0; left: 0;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--grad-glow) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-  transform: translate(-50%,-50%);
-  opacity: 0;
-  will-change: transform;
-}
-@media (hover:hover){ .cursor-glow{opacity:0.35;} }
+        .menu-toggle {
+            width: 44px;
+            height: 44px;
+            display: none;
+            place-items: center;
+            color: #ffffff;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            font-size: 1.15rem;
+            transition: var(--transition);
+        }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .6s var(--slow-motion-ease), transform .6s var(--slow-motion-ease);
-}
-.reveal.show { opacity: 1; transform: translateY(0); }
+        .menu-toggle:hover { background: rgba(255, 255, 255, 0.1); }
 
-#backToTop {
-  position: fixed;
-  bottom: 2rem;
-  left: 2rem;
-  width: 50px; height: 50px;
-  border-radius: 50%;
-  background: var(--grad-main);
-  color: #0f172a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.15rem;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 6px 20px var(--grad-glow);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: all .4s var(--slow-motion-ease);
-  z-index: 999;
-}
-#backToTop.show { opacity: 1; visibility: visible; transform: translateY(0); }
-#backToTop:hover { transform: translateY(-4px); }
+        /* Mobile Drawer */
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1998;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
 
-.typing-cursor {
-  display: inline-block;
-  width: 2px;
-  background: var(--c1);
-  margin-right: 2px;
-  animation: blink 0.9s steps(1) infinite;
-}
-@keyframes blink{50%{opacity:0;}}
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
 
-/* محاذاة الهواتف */
-@media (max-width: 860px) {
-  #authSection {
-    padding: 1rem;
-    align-items: center;
-    justify-content: center;
-  }
-  .card {
-    flex-direction: column;
-    width: 100% !important;
-    max-width: 420px !important;
-    height: auto !important;
-    min-height: 520px;
-  }
-  #authSection.light-off .card {
-    width: 200px !important;
-    height: 200px !important;
-    min-height: 200px !important;
-  }
-  .stage-panel { border-right: none; border-bottom: 1px solid var(--glass-border); min-height: 260px; }
-  .right-panel { padding: 1.25rem 1.2rem; }
-  
-  .nav-toggle { display: flex; }
-  #mainNav {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: var(--card-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--glass-border);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .45s var(--slow-motion-ease);
-  }
-  #mainNav.open { max-height: 300px; }
-  #mainNav ul { flex-direction: column; gap: 0; padding: 0.5rem 1.5rem; }
-  #mainNav ul li { border-top: 1px solid var(--glass-border); width: 100%; }
-  #mainNav ul li:first-child { border-top: none; }
-  #mainNav a { display: block; padding: 0.85rem 0; text-align: right; }
-  #mainNav a::after { display: none; }
-}
-</style>
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            bottom: 0;
+            z-index: 1999;
+            width: min(85%, 350px);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            background: rgba(3, 7, 18, 0.96);
+            backdrop-filter: blur(25px);
+            border-left: 1px solid var(--border);
+            transition: right 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+        }
+
+        .mobile-nav.active { right: 0; }
+
+        .mobile-nav-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-nav-title {
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+
+        .mobile-close {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            border-radius: var(--radius-sm);
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .mobile-close:hover {
+            transform: rotate(90deg);
+            background: var(--gradient);
+        }
+
+        .mobile-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mobile-links a {
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: #cbd5e1;
+            font-weight: 700;
+            font-size: 0.92rem;
+            border-radius: var(--radius-md);
+            opacity: 0;
+            transform: translateX(30px);
+            transition: var(--transition);
+        }
+
+        .mobile-nav.active .mobile-links a {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .mobile-nav.active .mobile-links a:nth-child(1) { transition-delay: 0.08s; }
+        .mobile-nav.active .mobile-links a:nth-child(2) { transition-delay: 0.14s; }
+        .mobile-nav.active .mobile-links a:nth-child(3) { transition-delay: 0.20s; }
+        .mobile-nav.active .mobile-links a:nth-child(4) { transition-delay: 0.26s; }
+        .mobile-nav.active .mobile-links a:nth-child(5) { transition-delay: 0.32s; }
+
+        .mobile-links a:hover, .mobile-links a.active {
+            color: #ffffff;
+            background: rgba(6, 182, 212, 0.12);
+            border-right: 3px solid var(--primary);
+        }
+
+        .mobile-links i {
+            width: 22px;
+            color: var(--primary);
+        }
+
+        /* ==========================================================================
+           5. الأقسام والمحتوى الرئيسي
+           ========================================================================== */
+        main { position: relative; z-index: 1; }
+
+        section {
+            width: min(1180px, 92%);
+            margin: 0 auto;
+            padding: 95px 0;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-heading {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            padding: 6px 14px;
+            color: var(--primary);
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            border-radius: 50px;
+            background: rgba(6, 182, 212, 0.08);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(1.85rem, 4vw, 2.7rem);
+            font-weight: 900;
+            line-height: 1.25;
+        }
+
+        .section-heading p {
+            max-width: 620px;
+            margin: 10px auto 0;
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.8;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            padding-top: 155px;
+            padding-bottom: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .available-badge {
+            width: fit-content;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 22px;
+            padding: 7px 16px;
+            color: #86efac;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            background: rgba(34, 197, 94, 0.08);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 12px #22c55e;
+            animation: pulse 1.6s infinite;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.3rem, 5.5vw, 4.8rem);
+            line-height: 1.12;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            margin-bottom: 18px;
+        }
+
+        .gradient-text {
+            display: inline-block;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: #94a3b8;
+            line-height: 1.95;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            min-height: 52px;
+            padding: 0 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border-radius: var(--radius-md);
+            font-weight: 800;
+            font-size: 0.92rem;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            color: #ffffff;
+            background: var(--gradient);
+            box-shadow: 0 10px 25px var(--gradient-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 35px var(--gradient-glow);
+        }
+
+        .btn-secondary {
+            color: #ffffff;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .hero-visual {
+            position: relative;
+            min-height: 440px;
+            display: grid;
+            place-items: center;
+        }
+
+        .hero-orbit {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border: 1px dashed rgba(6, 182, 212, 0.28);
+            border-radius: 50%;
+            animation: rotate 24s linear infinite;
+        }
+
+        .hero-orbit::before, .hero-orbit::after {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 20px var(--primary);
+        }
+
+        .hero-orbit::before { top: 25px; left: 50px; }
+        .hero-orbit::after { right: 35px; bottom: 60px; }
+
+        .hero-avatar {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(6, 182, 212, 0.35);
+            border-radius: 50%;
+            background: radial-gradient(circle at 50% 35%, rgba(6, 182, 212, 0.25), transparent 60%), rgba(15, 23, 42, 0.85);
+            box-shadow: 0 0 0 22px rgba(6, 182, 212, 0.04), var(--shadow);
+            animation: avatarFloat 5s ease-in-out infinite;
+        }
+
+        .avatar-initials {
+            font-size: 4rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .floating-tag {
+            position: absolute;
+            padding: 10px 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: rgba(15, 23, 42, 0.82);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            color: #dbeafe;
+            font-size: 0.76rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tag-one { top: 45px; right: 10px; animation: tagFloat 4.2s ease-in-out infinite; }
+        .tag-two { bottom: 50px; left: -10px; animation: tagFloat 4.8s 0.4s ease-in-out infinite; }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            position: relative;
+            padding: 28px 20px;
+            text-align: center;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-icon {
+            width: 62px;
+            height: 62px;
+            margin: 0 auto 16px;
+            display: grid;
+            place-items: center;
+            color: var(--primary);
+            border-radius: 18px;
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px solid rgba(6, 182, 212, 0.15);
+            font-size: 1.65rem;
+            transition: var(--transition);
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: scale(1.12);
+            color: #ffffff;
+            background: var(--gradient);
+            box-shadow: 0 8px 25px var(--gradient-glow);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 6px;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 0.76rem;
+            line-height: 1.6;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            position: relative;
+            min-height: 330px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+        }
+
+        .project-art {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 32px;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 30%, var(--gradient-glow), transparent 70%);
+        }
+
+        .project-icon {
+            position: relative;
+            z-index: 1;
+            width: 86px;
+            height: 86px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            border-radius: 24px;
+            color: var(--primary);
+            background: rgba(2, 6, 23, 0.6);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-icon {
+            transform: scale(1.1) rotate(-6deg);
+            color: #ffffff;
+            background: var(--gradient);
+            box-shadow: 0 10px 30px var(--gradient-glow);
+        }
+
+        .project-info {
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .project-tag {
+            padding: 3px 9px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--accent);
+            font-size: 0.68rem;
+            font-weight: 700;
+        }
+
+        .project-info h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .project-info p {
+            color: #aab6c7;
+            font-size: 0.78rem;
+            line-height: 1.5;
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-overlay { opacity: 1; }
+
+        .project-action {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            color: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .project-action:hover {
+            transform: translateY(-4px) scale(1.05);
+            background: var(--gradient);
+            border-color: transparent;
+            box-shadow: 0 8px 20px var(--gradient-glow);
+        }
+
+        /* Social */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .social-card {
+            min-height: 155px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            transition: var(--transition);
+            padding: 20px;
+        }
+
+        .social-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-icon {
+            width: 56px;
+            height: 56px;
+            display: grid;
+            place-items: center;
+            border-radius: 18px;
+            color: #ffffff;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-card:hover .social-icon { transform: scale(1.12) rotate(6deg); }
+
+        .facebook .social-icon { background: #1877f2; box-shadow: 0 8px 20px rgba(24, 119, 242, 0.3); }
+        .tiktok .social-icon { background: #000000; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15); }
+        .instagram .social-icon { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); box-shadow: 0 8px 20px rgba(253, 29, 29, 0.3); }
+        .youtube .social-icon { background: #ff0000; box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3); }
+
+        .social-card strong { font-size: 0.95rem; font-weight: 800; }
+        .social-card span { color: var(--muted); font-size: 0.74rem; }
+
+        /* Contact */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .contact-info, .contact-form {
+            padding: 34px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .contact-info h3 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .contact-info > p {
+            color: var(--muted);
+            line-height: 1.9;
+            font-size: 0.88rem;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-item:last-child { border-bottom: 0; }
+
+        .contact-item-icon {
+            width: 44px;
+            height: 44px;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            color: var(--primary);
+            border-radius: 14px;
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px solid rgba(6, 182, 212, 0.15);
+            font-size: 1.1rem;
+        }
+
+        .contact-item div strong { display: block; font-size: 0.84rem; margin-bottom: 2px; }
+        .contact-item div span { color: var(--muted); font-size: 0.74rem; }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .contact-form textarea {
+            width: 100%;
+            min-height: 130px;
+            resize: vertical;
+            padding: 14px 16px;
+            color: #ffffff;
+            background: rgba(2, 6, 23, 0.6);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .contact-form textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px var(--gradient-glow);
+            background: rgba(2, 6, 23, 0.85);
+        }
+
+        .whatsapp-btn {
+            width: 100%;
+            color: #ffffff;
+            background: #25d366;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2);
+            height: 52px;
+            border-radius: var(--radius-md);
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .whatsapp-btn:hover {
+            background: #20bd5b;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.35);
+        }
+
+        /* Footer */
+        footer {
+            width: min(1180px, 92%);
+            margin: auto;
+            padding: 35px 0 50px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+
+        footer strong { color: var(--primary); }
+
+        /* ==========================================================================
+           6. المكونات الإضافية
+           ========================================================================== */
+        .theme-wrapper {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 1500;
+        }
+
+        .theme-toggle {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            color: #ffffff;
+            border-radius: 50%;
+            background: var(--gradient);
+            box-shadow: 0 10px 30px var(--gradient-glow);
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-4px) rotate(30deg);
+            box-shadow: 0 15px 35px var(--gradient-glow);
+        }
+
+        .theme-panel {
+            position: absolute;
+            left: 0;
+            bottom: 65px;
+            width: 240px;
+            padding: 16px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(3, 7, 18, 0.95);
+            backdrop-filter: blur(25px);
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px) scale(0.95);
+            transform-origin: bottom left;
+            transition: var(--transition);
+        }
+
+        .theme-panel.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .theme-panel-title {
+            margin-bottom: 12px;
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .theme-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .theme-option {
+            position: relative;
+            width: 44px;
+            height: 44px;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .theme-option:hover { transform: translateY(-3px) scale(1.05); }
+        .theme-option.active {
+            border-color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .theme-option::after {
+            content: "";
+            position: absolute;
+            inset: 4px;
+            border-radius: 8px;
+            background: var(--theme);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 30px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            transform: scale(0.9);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active .modal-content { transform: scale(1); }
+
+        .modal-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .modal-btn {
+            flex: 1;
+            height: 46px;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .toast {
+            position: fixed;
+            right: 50%;
+            bottom: 25px;
+            z-index: 999999;
+            min-width: min(90%, 340px);
+            padding: 13px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(15px);
+            color: #ffffff;
+            font-size: 0.86rem;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            transform: translate(50%, 90px);
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .toast.show {
+            transform: translate(50%, 0);
+            opacity: 1;
+        }
+
+        .toast i { color: var(--primary); font-size: 1.1rem; }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid var(--border);
+            color: #ffffff;
+            display: grid;
+            place-items: center;
+            z-index: 990;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--gradient);
+            border-color: transparent;
+            transform: translateY(-4px);
+        }
+
+        /* ==========================================================================
+           7. Animations & Keyframes
+           ========================================================================== */
+        @keyframes loginAppear { from { opacity: 0; transform: translateY(25px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes formFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(5px); } 75% { transform: translateX(-5px); } }
+        @keyframes floatLogo { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @keyframes gridMove { from { transform: translate(0, 0); } to { transform: translate(65px, 65px); } }
+        @keyframes orbOne { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-80px, 80px) scale(1.12); } }
+        @keyframes orbTwo { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(90px, -60px) scale(1.15); } }
+        @keyframes orbThree { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(60px, 60px); } }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes avatarFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        @keyframes tagFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(0.75); opacity: 0.5; } }
+
+        /* ==========================================================================
+           8. Responsive Design & Media Queries
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; gap: 45px; text-align: center; }
+            .hero { padding-top: 140px; }
+            .available-badge, .hero-description, .hero-actions { margin-right: auto; margin-left: auto; justify-content: center; }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+            .social-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-wrapper { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            :root { --header-height: 68px; }
+            .site-header { top: 10px; padding: 0 3%; }
+            .desktop-nav { display: none; }
+            .menu-toggle { display: grid; }
+            section { padding: 75px 0; }
+            .hero { padding-top: 120px; min-height: auto; }
+            .hero-visual { min-height: 330px; }
+            .hero-orbit { width: 280px; height: 280px; }
+            .hero-avatar { width: 185px; height: 185px; }
+            .avatar-initials { font-size: 3.2rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .login-card { padding: 25px 20px; border-radius: 24px; }
+            .skills-grid, .social-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .skill-card { padding: 20px 14px; }
+            .skill-icon { width: 50px; height: 50px; font-size: 1.3rem; margin-bottom: 12px; }
+            .hero-actions { flex-direction: column; width: 100%; }
+            .hero-actions .btn { width: 100%; }
+            .theme-wrapper { bottom: 15px; left: 15px; }
+            .back-to-top { bottom: 15px; right: 15px; width: 44px; height: 44px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .grid-background, .orb, .hero-orbit, .hero-avatar, .floating-tag {
+                animation: none !important;
+            }
+        }
+    </style>
 </head>
-<body>
 
-<!-- شريط الإشعار -->
-<div class="toast-box" id="appToast">
-  <i class="fa-solid fa-circle-check" id="toastIcon"></i>
-  <span id="toastMsg">تم الإرسال بنجاح</span>
-</div>
+<body class="locked">
 
-<div class="cursor-glow" id="cursorGlow"></div>
-<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-
-<!-- =========================================================
-     صفحة تسجيل الدخول
-     ========================================================= -->
-<div id="authSection" class="notranslate" translate="no">
-  <div class="login-theme-floater">
-    <div class="theme-picker-group" title="اختر مزيج الألوان">
-      <div class="theme-dot emerald active" data-theme="emerald" title="Soft Mint & Ice Cyan"></div>
-      <div class="theme-dot purple" data-theme="purple" title="Soft Lavender & Pink"></div>
-      <div class="theme-dot sunset" data-theme="sunset" title="Warm Peach & Rose"></div>
-      <div class="theme-dot ocean" data-theme="ocean" title="Ice Blue & Sky"></div>
-    </div>
-  </div>
-
-  <div class="grid-bg"></div>
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-
-  <div class="card" id="authCard">
-    <div class="stage-panel" id="stagePanel">
-      <div class="floor-glow"></div>
-      <canvas id="particles"></canvas>
-
-      <div class="lamp-assembly">
-        <div class="lamp-wire"></div>
-        <div class="lamp-shade">
-          <div class="lamp-bulb"></div>
-        </div>
-      </div>
-
-      <div class="light-beam-cone"></div>
-
-      <!-- حبل الشد التفاعلي -->
-      <div class="pull-cord-wrapper" id="pullCord" title="انقر لسحب الحبل">
-        <div class="pull-cord-inner">
-          <div class="cord-line"></div>
-          <div class="cord-handle"></div>
-        </div>
-      </div>
-
-      <!-- الروبوت 3D -->
-      <div class="robot-wrapper">
-        <div class="robot-antenna"></div>
-        <div class="robot-head" id="robotHead">
-          <div class="robot-ear-left"></div>
-          <div class="robot-ear-right"></div>
-          <div class="robot-face">
-            <div class="robot-eye left"><div class="pupil" id="pupilLeft"></div></div>
-            <div class="robot-eye right"><div class="pupil" id="pupilRight"></div></div>
-            <div class="robot-blush-left"></div>
-            <div class="robot-blush-right"></div>
-            <div class="robot-smile"></div>
-          </div>
-        </div>
-      </div>
+    <!-- خلفية حية تفاعلية -->
+    <div class="background" aria-hidden="true">
+        <div class="grid-background"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <canvas id="particleCanvas"></canvas>
     </div>
 
-    <div class="right-panel">
-      <div class="auth-header">
-        <h2>Welcome <span>Back</span>.</h2>
-        <p>Choose your preferred sign-in method</p>
-      </div>
+    <!-- شاشة تسجيل الدخول -->
+    <div id="loginScreen" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+        <div class="login-card">
+            <div class="login-logo"><i class="fa-solid fa-code"></i></div>
+            <h1 id="loginTitle" class="login-title">Abdulrahman Dahshan</h1>
+            <p class="login-subtitle">مرحباً بك في معرض أعمالي وتجاربي الرقمية</p>
 
-      <div class="login-tabs">
-        <button type="button" class="tab-btn active" id="tabEmailBtn">
-          <i class="fa-solid fa-envelope"></i> Gmail
+            <div class="login-tabs" role="tablist">
+                <button class="login-tab active" role="tab" aria-selected="true" data-tab="gmail">
+                    <i class="fa-brands fa-google"></i> Gmail
+                </button>
+                <button class="login-tab" role="tab" aria-selected="false" data-tab="phone">
+                    <i class="fa-solid fa-mobile-screen-button"></i> Phone OTP
+                </button>
+            </div>
+
+            <!-- نموذج البريد الإلكتروني -->
+            <form id="gmailForm" class="login-form active" novalidate>
+                <div class="field">
+                    <label for="email">البريد الإلكتروني</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input id="email" type="email" placeholder="name@example.com" required autocomplete="email">
+                    </div>
+                    <div id="emailError" class="error-message">يرجى إدخال بريد إلكتروني صحيح.</div>
+                </div>
+                <div class="field">
+                    <label for="password">كلمة المرور</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-lock"></i>
+                        <input id="password" type="password" placeholder="أدخل كلمة المرور" required autocomplete="current-password">
+                    </div>
+                    <div id="passwordError" class="error-message">يرجى إدخال كلمة المرور.</div>
+                </div>
+                <button class="login-btn" type="submit">
+                    <i class="fa-solid fa-right-to-bracket"></i> <span>تسجيل الدخول</span>
+                </button>
+            </form>
+
+            <!-- نموذج رقم الهاتف و OTP -->
+            <form id="phoneForm" class="login-form" novalidate>
+                <div class="field">
+                    <label for="phone">رقم الهاتف</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-phone"></i>
+                        <input id="phone" type="tel" inputmode="numeric" maxlength="11" placeholder="01xxxxxxxxx" required autocomplete="tel">
+                    </div>
+                    <div id="phoneError" class="error-message">يجب أن يبدأ الرقم بـ 01 ويتكون من 11 رقماً.</div>
+                </div>
+                <div id="otpBox" class="otp-box">
+                    <div class="field">
+                        <label for="otp">كود التحقق (OTP)</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <input id="otp" class="otp-input" type="text" inputmode="numeric" maxlength="6" placeholder="000000">
+                        </div>
+                        <div id="otpError" class="error-message">يرجى إدخال رمز التحقق المكون من 6 أرقام.</div>
+                    </div>
+                </div>
+                <button class="login-btn" id="phoneButton" type="submit">
+                    <i class="fa-solid fa-paper-plane"></i> <span>إرسال كود OTP</span>
+                </button>
+            </form>
+            <p class="login-note">تسجيل دخول تجريبي (Demo) — لن يتم إرسال أو تخزين بياناتك الحساسة على خوادم خارجية.</p>
+        </div>
+    </div>
+
+    <!-- المحتوى الرئيسي للموقع -->
+    <div id="mainContent">
+        <!-- الهيدر -->
+        <header class="site-header">
+            <div class="header-inner">
+                <a href="#home" class="brand" aria-label="الصفحة الرئيسية">
+                    <span class="brand-icon"><i class="fa-solid fa-terminal"></i></span>
+                    <span class="brand-name">Abdulrahman</span>
+                </a>
+                <nav class="desktop-nav" aria-label="القائمة الرئيسية">
+                    <a href="#home" class="active">الرئيسية</a>
+                    <a href="#skills">المهارات</a>
+                    <a href="#projects">أعمالي</a>
+                    <a href="#social">حساباتي</a>
+                    <a href="#contact">تواصل</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="logout-btn-header" onclick="showLogoutModal()" aria-label="تسجيل الخروج">
+                        <i class="fa-solid fa-sign-out-alt"></i> <span>خروج</span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة الجانبية" aria-expanded="false" aria-controls="mobileNav">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- القائمة الجانبية -->
+        <div class="nav-overlay" id="navOverlay"></div>
+        <aside class="mobile-nav" id="mobileNav" aria-label="قائمة الموبايل">
+            <div class="mobile-nav-header">
+                <div class="mobile-nav-title">التنقل السريع</div>
+                <button class="mobile-close" id="mobileClose" aria-label="إغلاق القائمة">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <nav class="mobile-links">
+                <a href="#home"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+                <a href="#skills"><i class="fa-solid fa-layer-group"></i><span>المهارات</span></a>
+                <a href="#projects"><i class="fa-solid fa-briefcase"></i><span>أعمالي</span></a>
+                <a href="#social"><i class="fa-solid fa-share-nodes"></i><span>حساباتي</span></a>
+                <a href="#contact"><i class="fa-solid fa-paper-plane"></i><span>تواصل</span></a>
+            </nav>
+            <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border);">
+                <button class="logout-btn-header" style="width: 100%; justify-content: center; padding: 12px;" onclick="showLogoutModal(); window.closeMenu();">
+                    <i class="fa-solid fa-sign-out-alt"></i> تسجيل الخروج
+                </button>
+            </div>
+        </aside>
+
+        <!-- المحتوى الداخلي -->
+        <main>
+            <!-- Hero -->
+            <section class="hero" id="home">
+                <div class="hero-content">
+                    <div class="hero-text reveal">
+                        <div class="available-badge"><span class="status-dot"></span> متاح للعمل على مشاريع جديدة</div>
+                        <h1>مرحباً بك في التجربة الرقمية<br><span class="gradient-text">Abdulrahman Dahshan</span></h1>
+                        <p class="hero-description">مطور ويب Full Stack ومصمم واجهات وتجارب مستخدم (UI/UX). أصمم وأطور تطبيقات ومواقع ويب حديثة تجمع بين السرعة الفائقة، الهيكل المنظم، والجماليات البصرية المتقنة.</p>
+                        <div class="hero-actions">
+                            <a class="btn btn-primary" href="#projects"><i class="fa-solid fa-rocket"></i> استكشف أعمالي</a>
+                            <a class="btn btn-secondary" href="#contact"><i class="fa-regular fa-paper-plane"></i> تواصل معي</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual reveal">
+                        <div class="hero-orbit"></div>
+                        <div class="hero-avatar"><span class="avatar-initials">AD</span></div>
+                        <div class="floating-tag tag-one"><i class="fa-solid fa-code"></i> Full Stack Developer</div>
+                        <div class="floating-tag tag-two"><i class="fa-solid fa-wand-magic-sparkles"></i> Creative UI/UX</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- المهارات -->
+            <section id="skills">
+                <div class="section-heading reveal">
+                    <div class="section-kicker"><i class="fa-solid fa-bolt"></i> My Skills</div>
+                    <h2>المهارات والخبرات</h2>
+                    <p>أحدث الأدوات والتقنيات التي أعتمد عليها في بناء وتطوير المنتجات الرقمية</p>
+                </div>
+                <div class="skills-grid" id="skillsContainer"></div>
+            </section>
+
+            <!-- المشاريع -->
+            <section id="projects">
+                <div class="section-heading reveal">
+                    <div class="section-kicker"><i class="fa-solid fa-folder-open"></i> Portfolio</div>
+                    <h2>أبرز الأعمال والمشاريع</h2>
+                    <p>مجموعة مختارة من المشاريع التي تعكس الاهتمام بأدق التفاصيل والسرعة وتجربة المستخدم</p>
+                </div>
+                <div class="projects-grid" id="projectsContainer"></div>
+            </section>
+
+            <!-- السوشيال ميديا -->
+            <section id="social">
+                <div class="section-heading reveal">
+                    <div class="section-kicker"><i class="fa-solid fa-share-nodes"></i> Social Media</div>
+                    <h2>صفحاتي وحساباتي الرسمية</h2>
+                    <p>تابعني وتواصل معي عبر المنصات الاجتماعية المفضلة لديك</p>
+                </div>
+                <div class="social-grid">
+                    <a class="social-card facebook reveal" href="https://www.facebook.com/share/1JvM9z8MCY/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <div class="social-icon"><i class="fa-brands fa-facebook-f"></i></div>
+                        <strong>Facebook</strong><span>تابع أحدث المنشورات</span>
+                    </a>
+                    <a class="social-card tiktok reveal" href="https://www.tiktok.com/@abdelr6hman_dahshan?_r=1&_t=ZS-98xFtqQx2AP" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <div class="social-icon"><i class="fa-brands fa-tiktok"></i></div>
+                        <strong>TikTok</strong><span>شاهد أحدث المقاطع</span>
+                    </a>
+                    <a class="social-card instagram reveal" href="https://www.instagram.com/abd.elrahmanelsayed2?igsh=MTIxeHc3bmI0MWhtYw==&igsi=MTIxeHc3bmI0MWhtYw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <div class="social-icon"><i class="fa-brands fa-instagram"></i></div>
+                        <strong>Instagram</strong><span>تابع اليوميات والمشاريع</span>
+                    </a>
+                    <a class="social-card youtube reveal" href="https://youtube.com/@abdelrahmanelsayad0?si=EL2jL1xmavoxOMbc" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <div class="social-icon"><i class="fa-brands fa-youtube"></i></div>
+                        <strong>YouTube</strong><span>شاهد الشروحات والدروس</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- تواصل معي (تم تعديل حقل البريد إلى رقم الموبايل هنا) -->
+            <section id="contact">
+                <div class="section-heading reveal">
+                    <div class="section-kicker"><i class="fa-solid fa-paper-plane"></i> Contact</div>
+                    <h2>تواصل معي مباشر</h2>
+                    <p>اكتب رسالتك وسيتم فتح الواتساب مباشرة برسالة منسقة وجاهزة للإرسال الفوري.</p>
+                </div>
+                <div class="contact-wrapper reveal">
+                    <div class="contact-info">
+                        <h3>هل لديك فكرة مشروع؟</h3>
+                        <p>سواء كنت بحاجة إلى موقع متكامل، منصة ويب تفاعلية، أو استشارة لتطوير واجهات منصتك الحالية، أنا هنا لمساعدتك على تنفيذها باحترافية.</p>
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div><strong>WhatsApp Direct</strong><span>تواصل سريع ومباشر 24/7</span></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fa-solid fa-code"></i></div>
+                            <div><strong>Full Stack Development</strong><span>HTML · CSS · JavaScript · Node.js</span></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div><strong>رقم التواصل</strong><span>متاح للمناقشات المهنية والمشاريع</span></div>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="contactName">الاسم</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-user"></i>
+                                    <input id="contactName" type="text" placeholder="اكتب اسمك الكريم" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="contactPhone">رقم الموبايل</label>
+                                <div class="input-wrap">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <input id="contactPhone" type="tel" inputmode="numeric" maxlength="11" placeholder="01xxxxxxxxx" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="contactMessage">الرسالة أو تفاصيل المشروع</label>
+                            <textarea id="contactMessage" placeholder="اكتب تفاصيل الفكرة أو المشروع هنا..." required></textarea>
+                        </div>
+                        <button type="submit" class="whatsapp-btn">
+                            <i class="fa-brands fa-whatsapp"></i> إرسال عبر WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- الفوتر -->
+        <footer>
+            <p>© <span id="year"></span> <strong>Abdulrahman Dahshan</strong>. جميع الحقوق محفوظة.</p>
+        </footer>
+
+        <!-- مبدل الألوان -->
+        <div class="theme-wrapper">
+            <div class="theme-panel" id="themePanel" role="region" aria-label="لوحة اختيار الألوان">
+                <div class="theme-panel-title"><i class="fa-solid fa-palette"></i> اختر نظام الألوان</div>
+                <div class="theme-options">
+                    <button class="theme-option" data-theme="cyan" aria-label="ثيم سماوي" style="--theme: linear-gradient(135deg,#06b6d4,#0891b2)"></button>
+                    <button class="theme-option" data-theme="purple" aria-label="ثيم بنفسجي" style="--theme: linear-gradient(135deg,#a855f7,#ec4899)"></button>
+                    <button class="theme-option" data-theme="amber" aria-label="ثيم كهرماني" style="--theme: linear-gradient(135deg,#f59e0b,#d97706)"></button>
+                    <button class="theme-option" data-theme="emerald" aria-label="ثيم زمردي" style="--theme: linear-gradient(135deg,#10b981,#059669)"></button>
+                    <button class="theme-option" data-theme="blue" aria-label="ثيم أزرق" style="--theme: linear-gradient(135deg,#3b82f6,#1d4ed8)"></button>
+                    <button class="theme-option" data-theme="volcanic" aria-label="ثيم بركاني" style="--theme: linear-gradient(135deg,#ff4500,#8b0000)"></button>
+                    <button class="theme-option" data-theme="burgundy" aria-label="ثيم عنابي" style="--theme: linear-gradient(135deg,#800020,#4a0010)"></button>
+                </div>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="فتح لوحة اختيار الألوان">
+                <i class="fa-solid fa-palette"></i>
+            </button>
+        </div>
+
+        <!-- زر العودة للأعلى -->
+        <button class="back-to-top" id="backToTop" aria-label="الرجوع للأعلى">
+            <i class="fa-solid fa-arrow-up"></i>
         </button>
-        <button type="button" class="tab-btn" id="tabPhoneBtn">
-          <i class="fa-brands fa-whatsapp"></i> Phone OTP
-        </button>
-      </div>
+    </div>
 
-      <!-- 1. نموذج الدخول عبر Gmail -->
-      <form id="emailAuthForm" class="form-view active" novalidate>
-        <div class="form-group">
-          <label>GMAIL / EMAIL</label>
-          <div class="input-box">
-            <i class="fa-regular fa-envelope input-icon"></i>
-            <input type="text" id="emailInput" placeholder="Enter your Gmail or username" autocomplete="username">
-          </div>
-          <div class="error-text" id="emailError">الرجاء إدخال اسم المستخدم أو البريد</div>
+    <!-- نافذة تأكيد تسجيل الخروج -->
+    <div class="modal-overlay" id="logoutModal" role="dialog" aria-modal="true" aria-labelledby="logoutModalTitle">
+        <div class="modal-content">
+            <h3 id="logoutModalTitle" style="margin-bottom: 12px; font-size: 1.4rem;">تسجيل الخروج</h3>
+            <p style="color: var(--muted); margin-bottom: 20px; font-size: 0.9rem;">هل أنت متأكد من رغبتك في تسجيل الخروج والعودة للشاشة السابقة؟</p>
+            <div class="modal-buttons">
+                <button class="modal-btn" style="background: rgba(255,255,255,0.08); color: #ffffff;" onclick="closeLogoutModal()">إلغاء</button>
+                <button class="modal-btn" style="background: linear-gradient(135deg, #ef4444, #dc2626); color: #ffffff;" onclick="confirmLogout()">خروج</button>
+            </div>
         </div>
+    </div>
 
-        <div class="form-group">
-          <label>PASSWORD</label>
-          <div class="input-box">
-            <i class="fa-solid fa-lock input-icon"></i>
-            <input type="password" id="passwordInput" placeholder="••••••••" autocomplete="current-password">
-            <i class="fa-solid fa-eye-slash toggle-password" id="togglePassword"></i>
-          </div>
-          <div class="error-text" id="passwordError">كلمة المرور مطلوبة</div>
+    <!-- نافذة تفاصيل المشروع -->
+    <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+        <div class="modal-content" style="max-width: 520px; text-align: right;">
+            <h3 id="projectModalTitle" style="margin-bottom: 8px; font-size: 1.35rem; color: var(--text);"></h3>
+            <div id="projectModalTags" class="project-tags" style="margin-bottom: 14px;"></div>
+            <p id="projectModalDesc" style="color: var(--muted); line-height: 1.8; font-size: 0.88rem; margin-bottom: 22px;"></p>
+            <div class="modal-buttons" style="margin-top: 0;">
+                <button class="modal-btn" style="background: rgba(255,255,255,0.08); color: #ffffff;" onclick="closeProjectModal()">إغلاق</button>
+                <a id="projectModalDemo" href="#" target="_blank" rel="noopener noreferrer" class="modal-btn" style="background: var(--gradient); color: #ffffff;">
+                    <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 6px;"></i> معاينة المشروع
+                </a>
+            </div>
         </div>
-
-        <div style="text-align: right; margin-bottom: 0.8rem;">
-          <a href="#" id="forgotPassLink" style="color: var(--c1); font-size: 0.82rem; text-decoration: none; font-weight: 600;">Forgot Password?</a>
-        </div>
-
-        <button type="button" class="signin-btn" id="gmailSignInBtn">
-          <span>SIGN IN WITH GMAIL</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </form>
-
-      <!-- 2. نموذج الدخول عبر Phone و WhatsApp OTP -->
-      <form id="phoneAuthForm" class="form-view" novalidate>
-        <div class="form-group" id="phoneInputGroup">
-          <label>PHONE NUMBER (WHATSAPP)</label>
-          <div class="input-box">
-            <i class="fa-brands fa-whatsapp input-icon"></i>
-            <input type="tel" id="loginPhoneInput" placeholder="01012345678" autocomplete="tel">
-          </div>
-          <div class="error-text" id="phoneError">الرجاء إدخال رقم موبايل مصري صحيح</div>
-        </div>
-
-        <div class="form-group" id="otpInputGroup" style="display: none;">
-          <label>ENTER 6-DIGIT OTP CODE</label>
-          <div class="input-box">
-            <i class="fa-solid fa-key input-icon"></i>
-            <input type="number" id="otpCodeInput" placeholder="123456" maxlength="6">
-          </div>
-          <div class="error-text" id="otpError">رمز التحقق غير صحيح، يرجى المحاولة ثانية</div>
-        </div>
-
-        <button type="button" class="signin-btn" id="sendOtpBtn">
-          <span>إرسال رمز الدخول عبر واتساب</span>
-          <i class="fa-solid fa-paper-plane"></i>
-        </button>
-
-        <button type="button" class="signin-btn" id="verifyOtpBtn" style="display: none;">
-          <span>تأكيد وتسجيل الدخول</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </form>
     </div>
-  </div>
-</div>
 
-<!-- نافذة استعادة كلمة المرور -->
-<div class="modal-overlay" id="forgotModal">
-  <div class="modal-box">
-    <div class="modal-request">
-      <h3>استعادة <span>كلمة المرور</span></h3>
-      <p>اكتب رقم موبايلك المسجل لإرسال كود التحقق مباشرة إلى الواتساب الخاص بك.</p>
-      <div class="input-box" style="margin-bottom: 0.5rem;">
-        <input type="tel" id="forgotEmailInput" placeholder="رقم الموبايل (مثال: 01012345678)" autocomplete="tel" dir="ltr" style="text-align:left;">
-        <i class="fa-brands fa-whatsapp input-icon"></i>
-      </div>
-      <div class="error-text" id="forgotEmailError">الرجاء إدخال رقم موبايل مصري صحيح</div>
-      <div class="modal-actions">
-        <button type="button" class="signin-btn btn-secondary" id="forgotCancelBtn">إلغاء</button>
-        <button type="button" class="signin-btn" id="forgotSendBtn">إرسال الطلب</button>
-      </div>
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">تم تنفيذ العملية بنجاح.</span>
     </div>
-    <div class="modal-success" id="modalSuccess">
-      <i class="fa-solid fa-circle-check"></i>
-      <h3>تم <span>الإرسال</span></h3>
-      <p id="modalSuccessText">تم إرسال الرسالة إلى الواتساب بنجاح.</p>
-      <div class="modal-actions">
-        <button type="button" class="signin-btn" id="forgotCloseBtn" style="flex:1;">تمام</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- =========================================================
-     الموقع الرئيسي
-     ========================================================= -->
-<div id="mainWebsite">
-  <header>
-    <a href="#" class="logo">Abdulrahman Dahshan</a>
-
-    <nav id="mainNav">
-      <ul>
-        <li><a href="#hero">الرئيسية</a></li>
-        <li><a href="#projects">أعمالي</a></li>
-        <li><a href="#my-profile">صفحاتي</a></li>
-        <li><a href="#contact">تواصل معي</a></li>
-      </ul>
-    </nav>
-
-    <div class="header-actions">
-      <div class="theme-picker-group" title="اختر مزيج الألوان">
-        <div class="theme-dot emerald active" data-theme="emerald" title="Soft Mint & Ice Cyan"></div>
-        <div class="theme-dot purple" data-theme="purple" title="Soft Lavender & Pink"></div>
-        <div class="theme-dot sunset" data-theme="sunset" title="Warm Peach & Rose"></div>
-        <div class="theme-dot ocean" data-theme="ocean" title="Ice Blue & Sky"></div>
-      </div>
-      
-      <button class="logout-icon-btn" id="logoutBtn" title="تسجيل الخروج" aria-label="Logout">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-      </button>
-
-      <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة"><i class="fa-solid fa-bars"></i></button>
-    </div>
-  </header>
-
-  <section id="hero" class="hero">
-    <h1>Abdulrahman Dahshan</h1>
-    <p id="heroTyping">&nbsp;</p>
-    <a href="#projects" class="btn">استكشف أعمالي</a>
-  </section>
-
-  <section id="projects">
-    <h2 class="section-title reveal">أبرز الأعمال والمشاريع</h2>
-    <div class="grid">
-      <div class="card-item reveal">
-        <h3>مشروع 1</h3>
-        <p>تصميم وتطوير واجهة مستخدم تفاعلية بتجربة مستخدم سلسة وعصرية مع أفضل الممارسات البرمجية.</p>
-      </div>
-      <div class="card-item reveal">
-        <h3>مشروع 2</h3>
-        <p>تطوير تطبيقات ومواقع متكاملة تعتمد على بنية تحتية سحابية موثوقة وسريعة الاستجابة.</p>
-      </div>
-      <div class="card-item reveal">
-        <h3>مشروع 3</h3>
-        <p>صناعة تجارب رقمية مميزة وهوية برمجية ذات طابع متقدم وعصري.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="my-profile">
-    <h2 class="section-title reveal">صفحتي الشخصية وحساباتي</h2>
-    <div class="grid">
-      <div class="card-item reveal">
-        <h3><i class="fab fa-facebook"></i> فيسبوك</h3>
-        <p>تواصل معي وتابع حسابي الشخصي على فيسبوك.</p>
-        <a href="https://www.facebook.com/share/1JvM9z8MCY/" target="_blank" rel="noopener noreferrer" class="btn" style="width:100%; margin-top:1.25rem;">زيارة الصفحة</a>
-      </div>
-      <div class="card-item reveal">
-        <h3><i class="fab fa-tiktok"></i> تيك توك</h3>
-        <p>شاهد أحدث المقاطع والمحتوى التقني الحصري.</p>
-        <a href="https://www.tiktok.com/@abdelr6hman_dahshan?_r=1&_t=ZS-98xFtqQx2AP" target="_blank" rel="noopener noreferrer" class="btn" style="width:100%; margin-top:1.25rem;">زيارة الصفحة</a>
-      </div>
-      <div class="card-item reveal">
-        <h3><i class="fab fa-instagram"></i> انستجرام</h3>
-        <p>تابع صور اليوميات والقصص الخاصة بي أولاً بأول.</p>
-        <a href="https://www.instagram.com/abd.elrahmanelsayed2?igsh=MTIxeHc3bmI0MWhtYw==&igsi=MTIxeHc3bmI0MWhtYw==" target="_blank" rel="noopener noreferrer" class="btn" style="width:100%; margin-top:1.25rem;">زيارة الصفحة</a>
-      </div>
-      <div class="card-item reveal">
-        <h3><i class="fab fa-youtube"></i> يوتيوب</h3>
-        <p>تابع الشروحات والفيديوهات والدروس البرمجية الكاملة.</p>
-        <a href="https://youtube.com/@abdelrahmanelsayad0?si=EL2jL1xmavoxOMbc" target="_blank" rel="noopener noreferrer" class="btn" style="width:100%; margin-top:1.25rem;">زيارة الصفحة</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title reveal">تواصل معي</h2>
-    <div class="card-item reveal" style="max-width: 600px; margin: 0 auto; text-align: center;">
-      <p style="margin-bottom: 1.5rem;">يسعدني التواصل معك ومناقشة أي فكرة أو مشروع جديد.</p>
-      <a href="https://wa.me/201033965094" target="_blank" rel="noopener noreferrer" class="btn">راسلني واتساب</a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="socials">
-      <a href="https://www.facebook.com/share/1JvM9z8MCY/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.tiktok.com/@abdelr6hman_dahshan?_r=1&_t=ZS-98xFtqQx2AP" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-      <a href="https://www.instagram.com/abd.elrahmanelsayed2?igsh=MTIxeHc3bmI0MWhtYw==&igsi=MTIxeHc3bmI0MWhtYw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com/@abdelrahmanelsayad0?si=EL2jL1xmavoxOMbc" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-    </div>
-    <p>&copy; 2026 Abdulrahman Dahshan. جميع الحقوق محفوظة.</p>
-  </footer>
-</div>
-
-<script>
-/* =========================================================
-   1) مزامنة وتبديل السمات
-   ========================================================= */
-const allThemeDots = document.querySelectorAll('.theme-dot');
-allThemeDots.forEach(dot => {
-  dot.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const theme = dot.dataset.theme;
-    allThemeDots.forEach(d => {
-      if(d.dataset.theme === theme) d.classList.add('active');
-      else d.classList.remove('active');
-    });
-    
-    document.body.classList.remove('theme-purple', 'theme-sunset', 'theme-ocean');
-    if (theme !== 'emerald') {
-      document.body.classList.add(`theme-${theme}`);
-    }
-  });
-});
-
-function showToast(message, isError = false) {
-  const toast = document.getElementById('appToast');
-  const toastMsg = document.getElementById('toastMsg');
-  const toastIcon = document.getElementById('toastIcon');
-
-  toastMsg.textContent = message;
-  if(isError) {
-    toast.classList.add('error');
-    toastIcon.className = 'fa-solid fa-circle-exclamation';
-  } else {
-    toast.classList.remove('error');
-    toastIcon.className = 'fa-solid fa-circle-check';
-  }
-
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 4000);
-}
-
-/* =========================================================
-   2) الروبوت وتأثير الانكماش السينمائي السلس
-   ========================================================= */
-const authSection = document.getElementById('authSection');
-const authCard = document.getElementById('authCard');
-const pullCord = document.getElementById('pullCord');
-const robotHead = document.getElementById('robotHead');
-const pupilLeft = document.getElementById('pupilLeft');
-const pupilRight = document.getElementById('pupilRight');
-const emailInput = document.getElementById('emailInput');
-const passwordInput = document.getElementById('passwordInput');
-const togglePassword = document.getElementById('togglePassword');
-const mainWebsite = document.getElementById('mainWebsite');
-const logoutBtn = document.getElementById('logoutBtn');
-const gmailSignInBtn = document.getElementById('gmailSignInBtn');
-
-const ULTRAMSG_INSTANCE = 'instance188836';
-const ULTRAMSG_TOKEN = 'zrzcd8jsb1asiglk';
-
-function triggerCordPull(e) {
-  if (e) e.stopPropagation();
-  pullCord.classList.remove('pulling');
-  void pullCord.offsetWidth;
-  pullCord.classList.add('pulling');
-  if (navigator.vibrate) navigator.vibrate(40);
-  
-  authSection.classList.toggle('light-off');
-}
-
-pullCord.addEventListener('click', triggerCordPull);
-
-authCard.addEventListener('click', (e) => {
-  // إذا كانت الدائرة منكمشة ويتم النقر عليها أو على الحبل، أعد الفتح بسلاسة
-  if (authSection.classList.contains('light-off')) {
-    triggerCordPull();
-  }
-});
-
-let isThrottled = false;
-function updateRobotEyes(clientX, clientY) {
-  if (!robotHead || isThrottled) return;
-  isThrottled = true;
-  requestAnimationFrame(() => {
-    const rect = robotHead.getBoundingClientRect();
-    const robotX = rect.left + rect.width / 2;
-    const robotY = rect.top + rect.height / 2;
-
-    const angle = Math.atan2(clientY - robotY, clientX - robotX);
-    const distance = Math.min(5, Math.hypot(clientX - robotX, clientY - robotY) / 28);
-
-    const moveX = Math.cos(angle) * distance;
-    const moveY = Math.sin(angle) * distance;
-
-    pupilLeft.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
-    pupilRight.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
-    isThrottled = false;
-  });
-}
-
-document.addEventListener('mousemove', (e) => updateRobotEyes(e.clientX, e.clientY), { passive: true });
-document.addEventListener('touchmove', (e) => {
-  if (e.touches.length > 0) updateRobotEyes(e.touches[0].clientX, e.touches[0].clientY);
-}, { passive: true });
-
-passwordInput.addEventListener('focus', () => robotHead.classList.add('eyes-closed'));
-passwordInput.addEventListener('blur', () => robotHead.classList.remove('eyes-closed'));
-
-togglePassword.addEventListener('click', () => {
-  const isPassword = passwordInput.getAttribute('type') === 'password';
-  passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
-  togglePassword.classList.toggle('fa-eye');
-  togglePassword.classList.toggle('fa-eye-slash');
-});
-
-/* الجسيمات */
-const canvas = document.getElementById('particles');
-if (canvas) {
-  const ctx = canvas.getContext('2d');
-  let particlesArray = [];
-  function resizeCanvas() {
-    canvas.width = canvas.parentElement.clientWidth;
-    canvas.height = canvas.parentElement.clientHeight;
-  }
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-
-  class Particle {
-    constructor() {
-      this.x = canvas.width / 2 + (Math.random() * 40 - 20);
-      this.y = 80;
-      this.size = Math.random() * 2 + 0.5;
-      this.speedY = Math.random() * 1.2 + 0.5;
-      this.speedX = (Math.random() - 0.5) * 0.8;
-      this.opacity = 1;
-    }
-    update() { this.y += this.speedY; this.x += this.speedX; this.opacity -= 0.009; }
-    draw() {
-      ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  function handleParticles() {
-    if (!authSection.classList.contains('light-off') && Math.random() < 0.25) {
-      particlesArray.push(new Particle());
-    }
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < particlesArray.length; i++) {
-      particlesArray[i].update();
-      particlesArray[i].draw();
-      if (particlesArray[i].opacity <= 0 || particlesArray[i].y > canvas.height) {
-        particlesArray.splice(i, 1);
-        i--;
-      }
-    }
-    requestAnimationFrame(handleParticles);
-  }
-  handleParticles();
-}
-
-/* =========================================================
-   3) التبديل والدخول / الخروج
-   ========================================================= */
-const tabEmailBtn = document.getElementById('tabEmailBtn');
-const tabPhoneBtn = document.getElementById('tabPhoneBtn');
-const emailAuthForm = document.getElementById('emailAuthForm');
-const phoneAuthForm = document.getElementById('phoneAuthForm');
-
-tabEmailBtn.addEventListener('click', () => {
-  tabEmailBtn.classList.add('active');
-  tabPhoneBtn.classList.remove('active');
-  emailAuthForm.classList.add('active');
-  phoneAuthForm.classList.remove('active');
-});
-
-tabPhoneBtn.addEventListener('click', () => {
-  tabPhoneBtn.classList.add('active');
-  tabEmailBtn.classList.remove('active');
-  phoneAuthForm.classList.add('active');
-  emailAuthForm.classList.remove('active');
-});
-
-function loginSuccess() {
-  authSection.style.display = 'none';
-  mainWebsite.style.display = 'block';
-  window.scrollTo(0, 0);
-  initEnhancements();
-  showToast('تم تسجيل الدخول بنجاح! أهلاً بك.');
-}
-
-logoutBtn.addEventListener('click', () => {
-  mainWebsite.style.display = 'none';
-  authSection.style.display = 'flex';
-  authSection.classList.remove('light-off');
-  window.scrollTo(0, 0);
-
-  emailInput.value = '';
-  passwordInput.value = '';
-  loginPhoneInput.value = '';
-  loginPhoneInput.disabled = false;
-  otpCodeInput.value = '';
-  sendOtpBtn.style.display = 'flex';
-  sendOtpBtn.textContent = 'إرسال رمز الدخول عبر واتساب';
-  sendOtpBtn.disabled = false;
-  otpInputGroup.style.display = 'none';
-  verifyOtpBtn.style.display = 'none';
-
-  showToast('تم تسجيل الخروج بنجاح.');
-});
-
-function handleGmailLogin() {
-  const emailVal = emailInput.value.trim();
-  const passVal = passwordInput.value.trim();
-  let valid = true;
-
-  if(!emailVal){
-    emailInput.classList.add('invalid');
-    document.getElementById('emailError').classList.add('show');
-    valid = false;
-  } else {
-    emailInput.classList.remove('invalid');
-    document.getElementById('emailError').classList.remove('show');
-  }
-
-  if(!passVal){
-    passwordInput.classList.add('invalid');
-    document.getElementById('passwordError').classList.add('show');
-    valid = false;
-  } else {
-    passwordInput.classList.remove('invalid');
-    document.getElementById('passwordError').classList.remove('show');
-  }
-
-  if(valid) loginSuccess();
-}
-
-gmailSignInBtn.addEventListener('click', handleGmailLogin);
-emailAuthForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  handleGmailLogin();
-});
-
-const loginPhoneInput = document.getElementById('loginPhoneInput');
-const phoneError = document.getElementById('phoneError');
-const sendOtpBtn = document.getElementById('sendOtpBtn');
-const otpInputGroup = document.getElementById('otpInputGroup');
-const otpCodeInput = document.getElementById('otpCodeInput');
-const otpError = document.getElementById('otpError');
-const verifyOtpBtn = document.getElementById('verifyOtpBtn');
-
-let generatedLoginOtp = null;
-
-function isValidEgyptPhone(value){
-  const digits = value.trim().replace(/[\s-]/g, '');
-  return /^01[0125][0-9]{8}$/.test(digits);
-}
-
-sendOtpBtn.addEventListener('click', async () => {
-  const phoneVal = loginPhoneInput.value.trim();
-  if(!isValidEgyptPhone(phoneVal)){
-    loginPhoneInput.classList.add('invalid');
-    phoneError.classList.add('show');
-    return;
-  }
-
-  loginPhoneInput.classList.remove('invalid');
-  phoneError.classList.remove('show');
-  sendOtpBtn.textContent = 'جاري إرسال الرمز...';
-  sendOtpBtn.disabled = true;
-
-  let phoneDigits = phoneVal.replace(/[\s-]/g, '');
-  if (phoneDigits.startsWith('01')) phoneDigits = '2' + phoneDigits;
-
-  const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
-  generatedLoginOtp = otpCode;
-  const msgText = `رمز التحقق لتسجيل دخولك في موقع Abdulrahman Dahshan هو: ${otpCode} (صالح لمدة 10 دقائق)`;
-
-  try {
-    const res = await fetch('http://localhost:5000/api/auth/send-otp', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ phone: phoneVal })
-    });
-    const data = await res.json();
-    if(data.success) generatedLoginOtp = data.otp;
-  } catch (e) {
-    const apiUrl = `https://api.ultramsg.com/${ULTRAMSG_INSTANCE}/messages/chat?token=${ULTRAMSG_TOKEN}&to=${phoneDigits}&body=${encodeURIComponent(msgText)}`;
-    const img = new Image();
-    img.src = apiUrl;
-  }
-
-  sendOtpBtn.style.display = 'none';
-  otpInputGroup.style.display = 'block';
-  verifyOtpBtn.style.display = 'flex';
-  loginPhoneInput.disabled = true;
-
-  showToast(`تم إرسال كود التحقق إلى واتساب (${phoneVal}) بنجاح`);
-  otpCodeInput.focus();
-});
-
-function handleOtpVerify() {
-  const enteredOtp = otpCodeInput.value.trim();
-
-  if(enteredOtp === generatedLoginOtp && enteredOtp.length === 6){
-    otpCodeInput.classList.remove('invalid');
-    otpError.classList.remove('show');
-    loginSuccess();
-  } else {
-    otpCodeInput.classList.add('invalid');
-    otpError.classList.add('show');
-    showToast('رمز التحقق غير صحيح، يرجى إعادة المحاولة', true);
-  }
-}
-
-verifyOtpBtn.addEventListener('click', handleOtpVerify);
-phoneAuthForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  handleOtpVerify();
-});
-
-/* نافذة استعادة كلمة المرور */
-const forgotPassLink = document.getElementById('forgotPassLink');
-const forgotModal = document.getElementById('forgotModal');
-const forgotEmailInput = document.getElementById('forgotEmailInput');
-const forgotEmailError = document.getElementById('forgotEmailError');
-const forgotSendBtn = document.getElementById('forgotSendBtn');
-const forgotCancelBtn = document.getElementById('forgotCancelBtn');
-const forgotCloseBtn = document.getElementById('forgotCloseBtn');
-const modalRequest = document.querySelector('.modal-request');
-const modalSuccess = document.getElementById('modalSuccess');
-const modalSuccessText = document.getElementById('modalSuccessText');
-
-function openForgotModal(){
-  forgotModal.classList.add('open');
-  modalRequest.style.display = 'block';
-  modalSuccess.classList.remove('show');
-  forgotEmailInput.value = '';
-  forgotEmailInput.classList.remove('invalid');
-  forgotEmailError.classList.remove('show');
-  setTimeout(() => forgotEmailInput.focus(), 50);
-}
-
-function closeForgotModal(){ forgotModal.classList.remove('open'); }
-
-forgotPassLink.addEventListener('click', (e) => {
-  e.preventDefault();
-  openForgotModal();
-});
-forgotCancelBtn.addEventListener('click', closeForgotModal);
-forgotCloseBtn.addEventListener('click', closeForgotModal);
-forgotModal.addEventListener('click', (e) => { if(e.target === forgotModal) closeForgotModal(); });
-
-forgotSendBtn.addEventListener('click', async () => {
-  const val = forgotEmailInput.value.trim();
-  if(!isValidEgyptPhone(val)){
-    forgotEmailInput.classList.add('invalid');
-    forgotEmailError.classList.add('show');
-    return;
-  }
-  
-  forgotEmailInput.classList.remove('invalid');
-  forgotEmailError.classList.remove('show');
-  forgotSendBtn.textContent = 'جاري الإرسال...';
-  forgotSendBtn.disabled = true;
-
-  let phoneDigits = val.replace(/[\s-]/g, '');
-  if (phoneDigits.startsWith('01')) phoneDigits = '2' + phoneDigits;
-
-  const otpCode = Math.floor(100000 + Math.random() * 900000);
-  const msgText = `كود استعادة كلمة المرور الخاص بك في موقع Abdulrahman Dahshan هو: ${otpCode} (صالح لمدة 10 دقائق)`;
-
-  try {
-    const res = await fetch('http://localhost:5000/api/auth/forgot-password', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ phone: val })
-    });
-    const data = await res.json();
-    if (data.success) {
-      modalSuccessText.textContent = `تم إرسال كود الاستعادة إلى رقم واتساب (${val}) بنجاح!`;
-      modalRequest.style.display = 'none';
-      modalSuccess.classList.add('show');
-    }
-  } catch (error) {
-    const apiUrl = `https://api.ultramsg.com/${ULTRAMSG_INSTANCE}/messages/chat?token=${ULTRAMSG_TOKEN}&to=${phoneDigits}&body=${encodeURIComponent(msgText)}`;
-    const img = new Image();
-    img.src = apiUrl;
-    modalSuccessText.textContent = `تم إرسال كود الاستعادة إلى رقم واتساب (${val}) بنجاح!`;
-    modalRequest.style.display = 'none';
-    modalSuccess.classList.add('show');
-  } finally {
-    forgotSendBtn.textContent = 'إرسال الطلب';
-    forgotSendBtn.disabled = false;
-  }
-});
-
-/* تحسينات الموقع الرئيسي */
-let enhancementsStarted = false;
-function initEnhancements(){
-  if(enhancementsStarted) return;
-  enhancementsStarted = true;
-
-  const glow = document.getElementById('cursorGlow');
-  document.addEventListener('mousemove', (e) => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
-  });
-
-  const revealEls = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('show');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => revealObserver.observe(el));
-
-  const navLinks = document.querySelectorAll('#mainNav a[href^="#"]');
-  const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const id = '#' + entry.target.id;
-      const link = document.querySelector(`#mainNav a[href="${id}"]`);
-      if(!link) return;
-      if(entry.isIntersecting){
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      }
-    });
-  }, { threshold: 0.4 });
-  sections.forEach(sec => navObserver.observe(sec));
-
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 400){ backToTop.classList.add('show'); }
-    else{ backToTop.classList.remove('show'); }
-  });
-  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  const navToggle = document.getElementById('navToggle');
-  const mainNav = document.getElementById('mainNav');
-  navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
-  mainNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => mainNav.classList.remove('open'));
-  });
-
-  const typingEl = document.getElementById('heroTyping');
-  const phrases = [
-    'اهلا بيك في الجديد منو❤️‍🔥💪🏼🥇',
-    'مطوّر ويب شغوف بالتفاصيل.',
-    'من الفكرة للتنفيذ... باحترافية.'
-  ];
-  let phraseIndex = 0, charIndex = 0, deleting = false;
-
-  function typeLoop(){
-    const current = phrases[phraseIndex];
-    if(!deleting){
-      charIndex++;
-      typingEl.innerHTML = current.slice(0, charIndex) + '<span class="typing-cursor">&nbsp;</span>';
-      if(charIndex === current.length){
-        deleting = true;
-        setTimeout(typeLoop, 1800);
-        return;
-      }
-    } else {
-      charIndex--;
-      typingEl.innerHTML = current.slice(0, charIndex) + '<span class="typing-cursor">&nbsp;</span>';
-      if(charIndex === 0){
-        deleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-      }
-    }
-    setTimeout(typeLoop, deleting ? 40 : 70);
-  }
-  typeLoop();
-}
-</script>
 
+    <!-- JavaScript -->
+    <script>
+        "use strict";
+
+        /* ==========================================
+           1. بيانات التطبيق
+           ========================================== */
+        const skillsData = [
+            { icon: "fa-brands fa-html5", title: "HTML5 Semantic", desc: "بناء هياكل ويب معيارية، دلالية، ومهيأة للـ SEO." },
+            { icon: "fa-brands fa-css3-alt", title: "CSS3 & Animations", desc: "تصاميم متقدمة، Glassmorphism، وتحريك سلس وعصري." },
+            { icon: "fa-brands fa-js", title: "JavaScript ES6+", desc: "برمجة المنطق التفاعلي وتطبيقات الويب المستقلة SPA." },
+            { icon: "fa-brands fa-react", title: "React.js", desc: "بناء واجهات تفاعلية ومكونات قابلة لإعادة الاستخدام." },
+            { icon: "fa-brands fa-node-js", title: "Node.js & Express", desc: "تطوير جانب الخادم، بناء الـ APIs، والتعامل مع البيانات." },
+            { icon: "fa-solid fa-mobile-screen", title: "Responsive UI", desc: "تجارب مستخدم متجاوبة مع كافة مقاسات الشاشات والأجهزة." },
+            { icon: "fa-solid fa-code-branch", title: "Git & GitHub", desc: "إدارة الإصدارات، العمل الجماعي والتحكم في الكود." },
+            { icon: "fa-solid fa-wand-magic-sparkles", title: "UI/UX & Clean Code", desc: "تصميم واجهات بديهية وكتابة كود منظم وسهل الصيانة." }
+        ];
+
+        const projectsData = [
+            {
+                id: 1,
+                title: "منصة تحليلات تفاعلية ذكية",
+                desc: "واجهة تحكم متقدمة لإدارة البيانات والتحليلات البيانية بدقة فائقة وتجربة مستخدم منعشة وسريعة.",
+                tags: ["React", "Node.js", "Glassmorphism", "Chart.js"],
+                icon: "fa-solid fa-chart-line",
+                demoUrl: "https://example.com/demo1",
+                githubUrl: "https://github.com/example/analytics-dashboard"
+            },
+            {
+                id: 2,
+                title: "تطبيق متجر إلكتروني حديث",
+                desc: "منصة تجارة إلكترونية متجاوبة بالكامل مع عربة تسوق تفاعلية وفلترة متطورة للمنتجات.",
+                tags: ["JavaScript", "Responsive UI", "REST APIs"],
+                icon: "fa-solid fa-cart-shopping",
+                demoUrl: "https://example.com/demo2",
+                githubUrl: "https://github.com/example/ecommerce-app"
+            },
+            {
+                id: 3,
+                title: "نظام هوية وتجربة رقمية ذكية",
+                desc: "موقع هوية بصرية وتفاعلية يعتمد على حلول الـ IoT والواجهات الحديثة بأعلى معايير الأداء.",
+                tags: ["HTML5", "CSS Grid", "UI/UX", "Vanilla JS"],
+                icon: "fa-solid fa-robot",
+                demoUrl: "https://example.com/demo3",
+                githubUrl: "https://github.com/example/smart-identity"
+            }
+        ];
+
+        /* ==========================================
+           2. ثيمات الألوان
+           ========================================== */
+        const themes = {
+            cyan: { primary: "#06b6d4", secondary: "#0891b2", accent: "#22d3ee", dark: "#020617", cardBg: "rgba(15, 23, 42, 0.65)", text: "#f8fafc", gradient: "linear-gradient(135deg, #06b6d4, #0891b2)", glow: "rgba(6, 182, 212, 0.25)" },
+            purple: { primary: "#a855f7", secondary: "#ec4899", accent: "#d946ef", dark: "#090314", cardBg: "rgba(24, 10, 35, 0.65)", text: "#faf5ff", gradient: "linear-gradient(135deg, #a855f7, #ec4899)", glow: "rgba(168, 85, 247, 0.25)" },
+            amber: { primary: "#f59e0b", secondary: "#d97706", accent: "#fbbf24", dark: "#0d0802", cardBg: "rgba(30, 20, 5, 0.68)", text: "#fffbeb", gradient: "linear-gradient(135deg, #f59e0b, #d97706)", glow: "rgba(245, 158, 11, 0.25)" },
+            emerald: { primary: "#10b981", secondary: "#059669", accent: "#34d399", dark: "#020e0a", cardBg: "rgba(5, 30, 22, 0.65)", text: "#ecfdf5", gradient: "linear-gradient(135deg, #10b981, #059669)", glow: "rgba(168, 85, 247, 0.25)" },
+            blue: { primary: "#3b82f6", secondary: "#1d4ed8", accent: "#60a5fa", dark: "#020617", cardBg: "rgba(8, 20, 45, 0.65)", text: "#eff6ff", gradient: "linear-gradient(135deg, #3b82f6, #1d4ed8)", glow: "rgba(59, 130, 246, 0.25)" },
+            volcanic: { primary: "#ff4500", secondary: "#8b0000", accent: "#ff6b35", dark: "#0d0200", cardBg: "rgba(35, 9, 3, 0.68)", text: "#fff7ed", gradient: "linear-gradient(135deg, #ff4500, #ff6b35, #8b0000)", glow: "rgba(255, 69, 0, 0.25)" },
+            burgundy: { primary: "#800020", secondary: "#4a0010", accent: "#a0002a", dark: "#0a0103", cardBg: "rgba(35, 5, 12, 0.68)", text: "#fff1f2", gradient: "linear-gradient(135deg, #800020, #4a0010)", glow: "rgba(128, 0, 32, 0.25)" }
+        };
+
+        function applyTheme(themeName) {
+            const theme = themes[themeName] || themes.cyan;
+            const root = document.documentElement;
+            root.style.setProperty("--primary", theme.primary);
+            root.style.setProperty("--secondary", theme.secondary);
+            root.style.setProperty("--accent", theme.accent);
+            root.style.setProperty("--dark", theme.dark);
+            root.style.setProperty("--card-bg", theme.cardBg);
+            root.style.setProperty("--text", theme.text);
+            root.style.setProperty("--gradient", theme.gradient);
+            root.style.setProperty("--gradient-glow", theme.glow);
+
+            const metaTheme = document.querySelector('meta[name="theme-color"]');
+            if (metaTheme) metaTheme.setAttribute("content", theme.primary);
+
+            localStorage.setItem("dahshan_theme", themeName);
+            document.querySelectorAll(".theme-option").forEach(opt => {
+                opt.classList.toggle("active", opt.dataset.theme === themeName);
+            });
+        }
+
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem("dahshan_theme") || "cyan";
+            applyTheme(savedTheme);
+        }
+
+        function initializeThemePicker() {
+            const themeToggle = document.getElementById("themeToggle");
+            const themePanel = document.getElementById("themePanel");
+
+            themeToggle.addEventListener("click", (e) => {
+                e.stopPropagation();
+                themePanel.classList.toggle("active");
+            });
+
+            document.querySelectorAll(".theme-option").forEach(option => {
+                option.addEventListener("click", () => {
+                    applyTheme(option.dataset.theme);
+                    themePanel.classList.remove("active");
+                    showToast("تم تغيير نظام الألوان بنجاح.");
+                });
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!themePanel.contains(e.target) && !themeToggle.contains(e.target)) {
+                    themePanel.classList.remove("active");
+                }
+            });
+        }
+
+        /* ==========================================
+           3. خلفية الجسيمات
+           ========================================== */
+        function initializeCanvasParticles() {
+            const canvas = document.getElementById("particleCanvas");
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+            let particles = [];
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            window.addEventListener("resize", resize);
+            resize();
+
+            const particleCount = window.innerWidth < 768 ? 20 : 40;
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 2 + 1,
+                    speedY: Math.random() * 0.5 + 0.2,
+                    opacity: Math.random() * 0.5 + 0.2
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const primaryColor = getComputedStyle(document.documentElement).getPropertyValue("--primary").trim() || "#06b6d4";
+
+                ctx.fillStyle = primaryColor;
+                particles.forEach(p => {
+                    ctx.globalAlpha = p.opacity;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    p.y -= p.speedY;
+                    if (p.y < -10) {
+                        p.y = canvas.height + 10;
+                        p.x = Math.random() * canvas.width;
+                    }
+                });
+
+                requestAnimationFrame(animate);
+            }
+
+            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                animate();
+            }
+        }
+
+        /* ==========================================
+           4. نظام التحقق وتسجيل الدخول
+           ========================================== */
+        function checkLoginState() {
+            const isLoggedIn = localStorage.getItem("dahshan_logged_in") === "true";
+            const loginScreen = document.getElementById("loginScreen");
+            const mainContent = document.getElementById("mainContent");
+
+            if (isLoggedIn) {
+                loginScreen.style.display = "none";
+                mainContent.style.display = "block";
+                setTimeout(() => mainContent.classList.add("visible"), 50);
+                document.body.classList.remove("locked");
+            } else {
+                loginScreen.style.display = "flex";
+                mainContent.style.display = "none";
+                mainContent.classList.remove("visible");
+                document.body.classList.add("locked");
+            }
+        }
+
+        function initializeLogin() {
+            const tabs = document.querySelectorAll(".login-tab");
+            const forms = document.querySelectorAll(".login-form");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    tabs.forEach(t => {
+                        t.classList.remove("active");
+                        t.setAttribute("aria-selected", "false");
+                    });
+                    forms.forEach(f => f.classList.remove("active"));
+                    
+                    tab.classList.add("active");
+                    tab.setAttribute("aria-selected", "true");
+                    document.getElementById(tab.dataset.tab === "gmail" ? "gmailForm" : "phoneForm").classList.add("active");
+                    clearLoginErrors();
+                });
+            });
+
+            document.getElementById("gmailForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+                clearLoginErrors();
+                let valid = true;
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
+
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    document.getElementById("emailError").classList.add("show");
+                    valid = false;
+                }
+                if (password.length < 1) {
+                    document.getElementById("passwordError").classList.add("show");
+                    valid = false;
+                }
+
+                if (valid) {
+                    setButtonLoading(this.querySelector(".login-btn"), true);
+                    setTimeout(() => loginSuccessfully(), 700);
+                }
+            });
+
+            const phoneForm = document.getElementById("phoneForm");
+            const phoneInput = document.getElementById("phone");
+            const otpBox = document.getElementById("otpBox");
+            const otpInput = document.getElementById("otp");
+            const phoneButton = document.getElementById("phoneButton");
+
+            phoneInput.addEventListener("input", function () {
+                this.value = this.value.replace(/\D/g, "").slice(0, 11);
+                if (this.value.length === 11) document.getElementById("phoneError").classList.remove("show");
+            });
+
+            otpInput.addEventListener("input", function () {
+                this.value = this.value.replace(/\D/g, "").slice(0, 6);
+                if (this.value.length === 6) document.getElementById("otpError").classList.remove("show");
+            });
+
+            phoneForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                clearLoginErrors();
+                const phone = phoneInput.value.trim();
+
+                if (!otpBox.classList.contains("show")) {
+                    if (!/^01[0125]\d{8}$/.test(phone)) {
+                        document.getElementById("phoneError").classList.add("show");
+                        return;
+                    }
+                    setButtonLoading(phoneButton, true);
+                    setTimeout(() => {
+                        setButtonLoading(phoneButton, false);
+                        otpBox.classList.add("show");
+                        phoneButton.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i> <span>تأكيد الكود والدخول</span>';
+                        showToast("تم إرسال كود التحقق التجريبي (أدخل أي 6 أرقام).");
+                        otpInput.focus();
+                    }, 600);
+                    return;
+                }
+
+                if (!/^\d{6}$/.test(otpInput.value.trim())) {
+                    document.getElementById("otpError").classList.add("show");
+                    return;
+                }
+
+                setButtonLoading(phoneButton, true);
+                setTimeout(() => loginSuccessfully(), 700);
+            });
+        }
+
+        function setButtonLoading(button, isLoading) {
+            if (isLoading) {
+                button.dataset.original = button.innerHTML;
+                button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>جاري التحقق...</span>';
+                button.disabled = true;
+            } else {
+                button.innerHTML = button.dataset.original || button.innerHTML;
+                button.disabled = false;
+            }
+        }
+
+        function loginSuccessfully() {
+            localStorage.setItem("dahshan_logged_in", "true");
+            const loginScreen = document.getElementById("loginScreen");
+            const mainContent = document.getElementById("mainContent");
+
+            loginScreen.style.opacity = "0";
+            loginScreen.style.visibility = "hidden";
+
+            setTimeout(() => {
+                loginScreen.style.display = "none";
+                mainContent.style.display = "block";
+                setTimeout(() => mainContent.classList.add("visible"), 50);
+                document.body.classList.remove("locked");
+                window.scrollTo({ top: 0, behavior: "instant" });
+                showToast("مرحباً بك في Portfolio عبدالرحمن دهشان.");
+                initializeScrollObserver();
+            }, 500);
+        }
+
+        function clearLoginErrors() {
+            document.querySelectorAll(".error-message").forEach(error => error.classList.remove("show"));
+        }
+
+        /* ==========================================
+           5. التنقل والتمرير
+           ========================================== */
+        function initializeNavigation() {
+            const menuToggle = document.getElementById("menuToggle");
+            const mobileNav = document.getElementById("mobileNav");
+            const mobileClose = document.getElementById("mobileClose");
+            const navOverlay = document.getElementById("navOverlay");
+            const backToTop = document.getElementById("backToTop");
+
+            function openMenu() {
+                mobileNav.classList.add("active");
+                navOverlay.classList.add("active");
+                menuToggle.setAttribute("aria-expanded", "true");
+                document.body.classList.add("locked");
+            }
+
+            window.closeMenu = function () {
+                mobileNav.classList.remove("active");
+                navOverlay.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+                if (localStorage.getItem("dahshan_logged_in") === "true") {
+                    document.body.classList.remove("locked");
+                }
+            };
+
+            menuToggle.addEventListener("click", openMenu);
+            mobileClose.addEventListener("click", window.closeMenu);
+            navOverlay.addEventListener("click", window.closeMenu);
+            document.querySelectorAll(".mobile-links a").forEach(link => link.addEventListener("click", window.closeMenu));
+
+            document.addEventListener("keydown", e => {
+                if (e.key === "Escape") {
+                    window.closeMenu();
+                    closeLogoutModal();
+                    closeProjectModal();
+                }
+            });
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 400) {
+                    backToTop.classList.add("active");
+                } else {
+                    backToTop.classList.remove("active");
+                }
+                updateActiveNavLink();
+            });
+
+            backToTop.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
+
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll("section[id]");
+            const navLinks = document.querySelectorAll(".desktop-nav a");
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
+            });
+        }
+
+        /* ==========================================
+           6. ملء المهارات والمشاريع
+           ========================================== */
+        function renderSkillsAndProjects() {
+            const skillsContainer = document.getElementById("skillsContainer");
+            skillsContainer.innerHTML = skillsData.map(s => `
+                <article class="skill-card reveal">
+                    <div class="skill-icon"><i class="${s.icon}"></i></div>
+                    <h3>${s.title}</h3>
+                    <p>${s.desc}</p>
+                </article>
+            `).join("");
+
+            const projectsContainer = document.getElementById("projectsContainer");
+            projectsContainer.innerHTML = projectsData.map(p => `
+                <article class="project-card reveal">
+                    <div class="project-art"><div class="project-icon"><i class="${p.icon}"></i></div></div>
+                    <div class="project-info">
+                        <div class="project-tags">${p.tags.map(t => `<span class="project-tag">${t}</span>`).join("")}</div>
+                        <h3>${p.title}</h3>
+                        <p>${p.desc}</p>
+                    </div>
+                    <div class="project-overlay">
+                        <button class="project-action" onclick="openProjectModal(${p.id})" title="تفاصيل المشروع" aria-label="تفاصيل المشروع">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                        <a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-action" title="الكود على GitHub" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </article>
+            `).join("");
+        }
+
+        /* ==========================================
+           7. النوافذ المنبثقة للمشاريع
+           ========================================== */
+        window.openProjectModal = function(id) {
+            const project = projectsData.find(p => p.id === id);
+            if (!project) return;
+
+            document.getElementById("projectModalTitle").textContent = project.title;
+            document.getElementById("projectModalDesc").textContent = project.desc;
+            document.getElementById("projectModalTags").innerHTML = project.tags.map(t => `<span class="project-tag">${t}</span>`).join("");
+            document.getElementById("projectModalDemo").setAttribute("href", project.demoUrl);
+            document.getElementById("projectModal").classList.add("active");
+            document.body.classList.add("locked");
+        };
+
+        window.closeProjectModal = function() {
+            document.getElementById("projectModal").classList.remove("active");
+            if (localStorage.getItem("dahshan_logged_in") === "true") {
+                document.body.classList.remove("locked");
+            }
+        };
+
+        /* ==========================================
+           8. مراقب التمرير والظهور
+           ========================================== */
+        function initializeScrollObserver() {
+            const reveals = document.querySelectorAll(".reveal");
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            reveals.forEach(el => observer.observe(el));
+        }
+
+        /* ==========================================
+           9. نموذج التواصل المباشر (رقم الموبايل + WhatsApp)
+           ========================================== */
+        function initializeContactForm() {
+            const contactPhoneInput = document.getElementById("contactPhone");
+            
+            // قصر الإدخال على الأرقام بحد أقصى 11 رقماً
+            contactPhoneInput.addEventListener("input", function() {
+                this.value = this.value.replace(/\D/g, "").slice(0, 11);
+            });
+
+            document.getElementById("contactForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const name = document.getElementById("contactName").value.trim();
+                const phone = document.getElementById("contactPhone").value.trim();
+                const message = document.getElementById("contactMessage").value.trim();
+
+                if (!name || !phone || !message) {
+                    showToast("يرجى ملء جميع الحقول أولاً.");
+                    return;
+                }
+
+                if (!/^01[0125]\d{8}$/.test(phone)) {
+                    showToast("يرجى إدخال رقم موبايل صحيح (11 رقماً يبدأ بـ 01).");
+                    return;
+                }
+
+                /* =========================================================================
+                   ⚠️ رقم الواتساب: قم بتغيير هذا المتغير إلى رقم الواتساب الخاص بك
+                   ملاحظة: بصيغة دولية بدون علامة + أو أصفار في البداية (مثال لمصر: 2010xxxxxxxx)
+                   ========================================================================= */
+                const YOUR_WHATSAPP_NUMBER = "201000000000";
+
+                const text = `مرحباً عبدالرحمن 👋%0A%0A📌 الاسم: ${encodeURIComponent(name)}%0A📱 رقم الموبايل: ${encodeURIComponent(phone)}%0A%0A📝 تفاصيل الرسالة:%0A${encodeURIComponent(message)}`;
+                
+                window.open(`https://wa.me/${YOUR_WHATSAPP_NUMBER}?text=${text}`, "_blank", "noopener,noreferrer");
+                this.reset();
+                showToast("تم فتح تطبيق WhatsApp برقمك ورسالتك.");
+            });
+        }
+
+        /* ==========================================
+           10. الأدوات المساعدة والمودال
+           ========================================== */
+        let toastTimer = null;
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            document.getElementById("toastMessage").textContent = message;
+            toast.classList.add("show");
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove("show"), 3500);
+        }
+
+        window.showLogoutModal = function () {
+            document.getElementById("logoutModal").classList.add("active");
+            document.body.classList.add("locked");
+        };
+
+        window.closeLogoutModal = function () {
+            document.getElementById("logoutModal").classList.remove("active");
+            if (localStorage.getItem("dahshan_logged_in") === "true") {
+                document.body.classList.remove("locked");
+            }
+        };
+
+        window.confirmLogout = function () {
+            localStorage.removeItem("dahshan_logged_in");
+            location.reload();
+        };
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href");
+                if (targetId === "#") return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            });
+        });
+
+        /* ==========================================
+           11. نقطة البداية
+           ========================================== */
+        document.addEventListener("DOMContentLoaded", function () {
+            initializeTheme();
+            initializeCanvasParticles();
+            checkLoginState();
+            initializeLogin();
+            initializeNavigation();
+            initializeThemePicker();
+            renderSkillsAndProjects();
+            initializeScrollObserver();
+            initializeContactForm();
+            document.getElementById("year").textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
 </html>
